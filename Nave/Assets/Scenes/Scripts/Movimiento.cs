@@ -38,9 +38,9 @@ public class Movimiento : MonoBehaviour
 
         transform.Translate(Vector3.up * desplY * Time.deltaTime);
 
-        if (transform.position.y <= -2.34)
+        if (transform.position.y <= -1.308465)
         {
-            transform.position = new Vector3(transform.position.x, -2.34f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -1.308465f, transform.position.z);
         }
 
         if (transform.position.y >= 20)
