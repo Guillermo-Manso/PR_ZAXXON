@@ -1,0 +1,153 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1237; Version 2009; 64bit' Language: 'es' Physical Memory: 8083 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+F:/Unity/Repositorio/PR_ZAXXON/Nave
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59628
+Successfully changed project path to: F:/Unity/Repositorio/PR_ZAXXON/Nave
+F:/Unity/Repositorio/PR_ZAXXON/Nave
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 21.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Unity/Repositorio/PR_ZAXXON/Nave/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c81)
+    Vendor:   
+    VRAM:     1977 MB
+    Driver:   30.0.14.7141
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56672
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002702 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 21.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000799 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.800 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1117 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.4 MB.
+System memory in use after: 57.4 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1561.
+Total: 1.925200 ms (FindLiveObjects: 0.270100 ms CreateObjectMapping: 0.136500 ms MarkObjects: 1.428300 ms  DeleteObjects: 0.088700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Tanke2.fbx
+  artifactKey: Guid(ab30e03125b55f447a16c8563717ee11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tanke2.fbx using Guid(ab30e03125b55f447a16c8563717ee11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86fb23bff74a9fb04f88e6a8c75cb40a') in 0.180481 seconds
+  Import took 0.197088 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000963 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.745 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.9 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1607.
+Total: 1.639900 ms (FindLiveObjects: 0.131600 ms CreateObjectMapping: 0.034600 ms MarkObjects: 1.410700 ms  DeleteObjects: 0.061700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 323.019015 seconds.
+  path: Assets/Scenes/Tanke.fbx
+  artifactKey: Guid(5902aa64496f2264996aa39cfda9cadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tanke.fbx using Guid(5902aa64496f2264996aa39cfda9cadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d63796f41fce0c59468c7fb4d8bb50') in 0.125154 seconds
+  Import took 0.175297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.644614 seconds.
+  path: Assets/Scenes/Materiales/New Material.mat
+  artifactKey: Guid(08fe9d6814ffa5244a00c5fe9023c3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Materiales/New Material.mat using Guid(08fe9d6814ffa5244a00c5fe9023c3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ffac0c3bf73abcf5438e40d23d5010') in 0.128547 seconds
+  Import took 0.141384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 74.956793 seconds.
+  path: Assets/Scenes/Tanke.fbx
+  artifactKey: Guid(5902aa64496f2264996aa39cfda9cadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tanke.fbx using Guid(5902aa64496f2264996aa39cfda9cadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa84d833668e2567aa54dd5af32bb034') in 0.032447 seconds
+  Import took 0.082950 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000822 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.697 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 61.0 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1611.
+Total: 1.645700 ms (FindLiveObjects: 0.117100 ms CreateObjectMapping: 0.035200 ms MarkObjects: 1.440800 ms  DeleteObjects: 0.051300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

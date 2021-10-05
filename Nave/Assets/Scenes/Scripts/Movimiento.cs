@@ -5,12 +5,12 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
 
-    float speed = 12;
+    [SerializeField] float speed = 15;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,26 +22,16 @@ public class Movimiento : MonoBehaviour
 
         transform.Translate(Vector3.left * -desplX * Time.deltaTime);
 
-        if (transform.position.x >= 10)
+        if (transform.position.x >= 13)
         {
-            transform.position = new Vector3(10f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(13f, transform.position.y, transform.position.z);
         }
-        else if (transform.position.x <= -10)
+        else if (transform.position.x <= -13)
         {
-            transform.position = new Vector3(-10f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-13f, transform.position.y, transform.position.z);
         }
 
-        //Rotacion a la izquierda
-        /*
-        float rotIzqda;
-
-        if (speed < 0)
-        {
-            
-        }
-        */
-
-
+       
 
         //Desplazamiento en Y
         float desplY = Input.GetAxis("Vertical") * speed;

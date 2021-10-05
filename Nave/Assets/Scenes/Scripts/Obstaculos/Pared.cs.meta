@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0588e64ddef9777438a03b2939387162
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - esfera: {fileID: 3327394939416105685, guid: 090178221e7f15e498ea4cdcb1b9b707, type: 3}
+  - ladrillo: {fileID: 8901717684043573523, guid: d972820deb97a81469236bc1c8f6da83, type: 3}
+  - pinchoIzqda: {fileID: 2757295717762127879, guid: ca56d5635d1454c4ab19e3ad59025041, type: 3}
+  - initPos: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
