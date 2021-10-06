@@ -6,19 +6,19 @@ public class Movimiento : MonoBehaviour
 {
 
     [SerializeField] float speed = 15;
-
+    bool modoAvion = true;
+    bool switcha = true;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+  
 
     // Update is called once per frame
     void Update()
     {
-        bool modoAvion = true;
-        bool switcha = true;
+        
 
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -76,8 +76,7 @@ public class Movimiento : MonoBehaviour
         else
         {
 
-            transform.Translate(new Vector3(0, -1.308465f, 0));
-
+            
             //Desplazamiento en X
             float desplX = Input.GetAxis("Horizontal") * speed;
 
