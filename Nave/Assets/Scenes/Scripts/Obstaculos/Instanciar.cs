@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pared : MonoBehaviour
+public class Instanciar : MonoBehaviour
 {
     [SerializeField] GameObject esfera;
     [SerializeField] GameObject ladrillo;
@@ -18,6 +18,7 @@ public class Pared : MonoBehaviour
             StartCoroutine("Pareddes");
             StartCoroutine("Paredes");
             StartCoroutine("PinchoIzqda");
+            StartCoroutine("PinchoDcha");
 
 
     }
@@ -76,14 +77,14 @@ public class Pared : MonoBehaviour
 
         for (int n = 0; ; n++)
         {
-            float aleatorioX = Random.Range(-13, 13);
+            float aleatorioX = Random.Range(-5, 13);
 
             Vector3 newPos = new Vector3(aleatorioX, transform.position.y, transform.position.z);
 
 
 
             Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0,0,20));
-            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0, 0, -20));
+            
 
             yield return new WaitForSeconds(0.7f);
         }
@@ -94,8 +95,26 @@ public class Pared : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator PinchoDcha()
+    {
+        for (int n = 0; ; n++)
+        {
+            yield return new WaitForSeconds(0.3f);
+            float aleatorioX = Random.Range(-13, 5);
+
+            Vector3 newPos = new Vector3(aleatorioX, transform.position.y, transform.position.z);
+
+
+
+            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0, 0, -20));
+
+
+            yield return new WaitForSeconds(0.7f);
+        }
+    }
+
+// Update is called once per frame
+void Update()
     {
         
     }
