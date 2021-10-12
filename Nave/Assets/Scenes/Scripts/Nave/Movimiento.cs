@@ -6,8 +6,9 @@ public class Movimiento : MonoBehaviour
 {
 
     [SerializeField] float speed = 15;
-    bool modoAvion = true;
-    bool switcha = true;
+    public bool modoAvion = true;
+    public bool switcha = true;
+    public bool moverse = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class Movimiento : MonoBehaviour
   
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
 
@@ -24,7 +25,19 @@ public class Movimiento : MonoBehaviour
         {
             if (switcha)
             {
-                transform.position = new Vector3(transform.position.x, -2.34f, transform.position.z);
+
+                while (moverse)
+                {
+
+                    transform.Translate(Vector3.down * Time.deltaTime * speed);
+                    if(transform.position.y <= -2.34)  
+                    {
+                        moverse = false;
+                    }
+
+                }
+
+                //transform.position = new Vector3(transform.position.x, -2.34f, transform.position.z);
                 modoAvion = false;
                 switcha = false;
             }
@@ -32,6 +45,7 @@ public class Movimiento : MonoBehaviour
             {
                 modoAvion = true;
                 switcha = true;
+                moverse = true;
 
             }
 
@@ -94,6 +108,5 @@ public class Movimiento : MonoBehaviour
         }
 
 
-        //print(transform.position);
     }
 }

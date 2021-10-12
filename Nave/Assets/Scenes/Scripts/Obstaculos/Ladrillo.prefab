@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 203480998421720027}
   - component: {fileID: 5695449141069220770}
   - component: {fileID: 8988168386034755321}
-  - component: {fileID: 2344428688513457991}
+  - component: {fileID: 7229633610044879933}
   m_Layer: 0
   m_Name: Ladrillo
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2344428688513457991
+--- !u!114 &7229633610044879933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,3 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7a38c967e8896419a9f77334aea3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Iniciar: {fileID: 8346302990691248059, guid: 286ca168680440c4c9bba80150b3292b, type: 3}

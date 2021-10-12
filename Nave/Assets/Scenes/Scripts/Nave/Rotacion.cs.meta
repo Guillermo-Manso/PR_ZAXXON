@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d7a38c967e8896419a9f77334aea3ac
+guid: 31fe88b60e0f5f34eacabf2d1e2e1f8b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Iniciar: {fileID: 8346302990691248059, guid: 286ca168680440c4c9bba80150b3292b, type: 3}
+  - Nave: {fileID: 5273706999696610806, guid: 3130e44473659fc48affd0bf773009fa, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
