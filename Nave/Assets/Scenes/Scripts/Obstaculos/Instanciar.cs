@@ -8,17 +8,23 @@ public class Instanciar : MonoBehaviour
     [SerializeField] GameObject ladrillo;
     [SerializeField] GameObject pinchoIzqda;
     [SerializeField] Transform initPos;
-    
-    
 
+    public GameObject Iniciar;
+    private Inicio inicio;
+    float intervalo;
+    float distanciaEntreObstaculos;
     // Start is called before the first frame update
     void Start()
     {
+
+        inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
+        intervalo = inicio.intervalo;
 
             StartCoroutine("Pareddes");
             StartCoroutine("Paredes");
             StartCoroutine("PinchoIzqda");
             StartCoroutine("PinchoDcha");
+            StartCoroutine("PinchoHorizontal");
 
 
     }
@@ -39,7 +45,7 @@ public class Instanciar : MonoBehaviour
 
             Instantiate(ladrillo, newPos, Quaternion.identity);
 
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(intervalo);
         }
 
         
@@ -113,9 +119,29 @@ public class Instanciar : MonoBehaviour
         }
     }
 
-// Update is called once per frame
-void Update()
+    IEnumerator PinchoHorizontal()
     {
-        
+        for (int n = 0; ; n++)
+        {
+            yield return new WaitForSeconds(0.3f);
+            float aleatorioY = Random.Range(-2.34f, 20);
+
+            Vector3 newPos = new Vector3(-13, aleatorioY, transform.position.z);
+
+
+
+            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0, 0, -110));
+
+
+            yield return new WaitForSeconds(0.7f);
+        }
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        print(intervalo);
     }
 }

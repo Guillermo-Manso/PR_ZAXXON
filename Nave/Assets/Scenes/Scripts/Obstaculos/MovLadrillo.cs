@@ -12,11 +12,11 @@ public class MovLadrillo : MonoBehaviour
     void Start()
     {
 
-        inicio = Iniciar.GetComponent<Inicio>();
+        inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
         velocidad = inicio.velGeneral;
 
     }
-
+     
     // Update is called once per frame
     void Update()
     {

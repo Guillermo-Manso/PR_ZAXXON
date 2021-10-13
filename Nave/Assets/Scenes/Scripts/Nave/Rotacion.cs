@@ -8,7 +8,8 @@ public class Rotacion : MonoBehaviour
     public GameObject Nave;
     private Movimiento movimiento;
     Vector3 rotacionZ = new Vector3(0f, 0f, -1f);
-    Vector3 rotacionY = new Vector3(0f, 1f, 0f);
+    Vector3 rotacionY = new Vector3(0f, -1f, 0f);
+    Vector3 rotacionX = new Vector3(-1f, 0f, 0f);
 
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class Rotacion : MonoBehaviour
         {
             float rotar = Input.GetAxis("Horizontal");
             transform.Rotate(rotacionZ * Time.deltaTime * rotar * velocidadRot);
+            transform.Rotate(rotacionX * Time.deltaTime * Input.GetAxis("Vertical") * velocidadRot);
         }
 
         else if(movimiento.modoAvion == false)
