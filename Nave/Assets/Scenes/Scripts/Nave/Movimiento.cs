@@ -10,7 +10,6 @@ public class Movimiento : MonoBehaviour
     [SerializeField] float speed = 15;
     public bool modoAvion = true;
     public bool switcha = true;
-    public bool moverse = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,36 +18,21 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             if (switcha)
             {
-
-                while (moverse)
-                {
-                    //rigibody.constraints = RigidbodyConstraints.None;
-                    transform.Translate(Vector3.down * 0.01f * Time.deltaTime * speed);
-                    if(transform.position.y <= -2.88f)  
-                    {
-
-                        //rigibody.constraints = RigidbodyConstraints.FreezePositionY;
-                        moverse = false;
-                        
-                    }
-
-                }
-
+                rigibody.constraints = RigidbodyConstraints.None;
+                
                 modoAvion = false;
                 switcha = false;
             }
             else
             {
+                //rigibody.AddForce(transform.up * 10);
                 modoAvion = true;
                 switcha = true;
-                moverse = true;
-
             }
 
         }
@@ -56,6 +40,12 @@ public class Movimiento : MonoBehaviour
 
         if (modoAvion == true)
         {
+            //Ascenso desde el suelo
+            if (transform.position.y < -1.308465)
+            {
+                transform.Translate(Vector3.up * 10 * Time.deltaTime);
+            }
+
             //Desplazamiento en X
             float desplX = Input.GetAxis("Horizontal") * speed;
 
@@ -71,21 +61,24 @@ public class Movimiento : MonoBehaviour
             }
 
 
-
             //Desplazamiento en Y
-            float desplY = Input.GetAxis("Vertical") * speed;
-
-            transform.Translate(Vector3.up * desplY * Time.deltaTime);
-
-            if (transform.position.y <= -1.308465)
+            if (transform.position.y >= -1.308465)
             {
-                transform.position = new Vector3(transform.position.x, -1.308465f, transform.position.z);
-            }
+                float desplY = Input.GetAxis("Vertical") * speed;
 
-            if (transform.position.y >= 20)
-            {
-                transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+                transform.Translate(Vector3.up * desplY * Time.deltaTime);
+
+                if (transform.position.y <= -1.308465)
+                {
+                    transform.position = new Vector3(transform.position.x, -1.308465f, transform.position.z);
+                }
+
+                if (transform.position.y >= 21.26085f)
+                {
+                    transform.position = new Vector3(transform.position.x, 21.26085f, transform.position.z);
+                }
             }
+            
         }
 
 
@@ -111,4 +104,5 @@ public class Movimiento : MonoBehaviour
 
 
     }
+
 }

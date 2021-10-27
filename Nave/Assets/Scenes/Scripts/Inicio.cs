@@ -38,7 +38,7 @@ public class Inicio : MonoBehaviour
             {
                 nivel++;
                 print("Nivel " + nivel);
-                velGeneral = velGeneral + 20;
+                velGeneral = velGeneral + 10;
                 contar = 0;
                 cambioNivel = cambioNivel * 1.2f;
                 

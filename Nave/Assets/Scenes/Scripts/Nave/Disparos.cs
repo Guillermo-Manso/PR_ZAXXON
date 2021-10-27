@@ -14,12 +14,12 @@ public class Disparos : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             StartCoroutine("Disparar");
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             StopCoroutine("Disparar");
         }

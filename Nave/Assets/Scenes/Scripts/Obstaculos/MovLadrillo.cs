@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovLadrillo : MonoBehaviour
 {
+    public GameObject NaveTanque;
+    private DestruirNave destruirNave;
+
 
     public GameObject Iniciar;
     private Inicio inicio;
@@ -11,6 +14,7 @@ public class MovLadrillo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
 
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
         velocidad = inicio.velGeneral;
@@ -29,6 +33,17 @@ public class MovLadrillo : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(destruirNave.alive == false)
+        {
+            StartCoroutine("DestruirTodo");
+        }
+
+    }
+
+    IEnumerator DestruirTodo()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
     /*
     public void OnTriggerEnter(Collider other)
