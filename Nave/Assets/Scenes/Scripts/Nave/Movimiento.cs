@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
+    Rigidbody rigibody;
+
 
     [SerializeField] float speed = 15;
     public bool modoAvion = true;
@@ -12,10 +14,8 @@ public class Movimiento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigibody = GetComponent<Rigidbody>();
     }
-  
-
     // Update is called once per frame
     public void Update()
     {
@@ -28,16 +28,18 @@ public class Movimiento : MonoBehaviour
 
                 while (moverse)
                 {
-
-                    transform.Translate(Vector3.down * Time.deltaTime * speed);
-                    if(transform.position.y <= -2.34)  
+                    //rigibody.constraints = RigidbodyConstraints.None;
+                    transform.Translate(Vector3.down * 0.01f * Time.deltaTime * speed);
+                    if(transform.position.y <= -2.88f)  
                     {
+
+                        //rigibody.constraints = RigidbodyConstraints.FreezePositionY;
                         moverse = false;
+                        
                     }
 
                 }
 
-                //transform.position = new Vector3(transform.position.x, -2.34f, transform.position.z);
                 modoAvion = false;
                 switcha = false;
             }

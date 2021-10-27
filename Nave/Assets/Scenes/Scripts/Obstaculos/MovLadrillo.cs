@@ -20,7 +20,7 @@ public class MovLadrillo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        velocidad = inicio.velGeneral;
         transform.Translate(Vector3.back * Time.deltaTime * velocidad);
 
         float posZ = transform.position.z;
@@ -30,4 +30,15 @@ public class MovLadrillo : MonoBehaviour
         }
 
     }
+    /*
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.name == "NaveTanque")
+        {
+            Destroy(gameObject);
+        }
+
+    }
+    */
 }

@@ -4,144 +4,97 @@ using UnityEngine;
 
 public class Instanciar : MonoBehaviour
 {
-    [SerializeField] GameObject esfera;
-    [SerializeField] GameObject ladrillo;
-    [SerializeField] GameObject pinchoIzqda;
-    [SerializeField] Transform initPos;
+    [SerializeField] GameObject[] arrayObst;
 
     public GameObject Iniciar;
     private Inicio inicio;
-    float intervalo;
-    float distanciaEntreObstaculos;
+
+    public GameObject NaveTanque;
+    private DestruirNave destruirNave;
     // Start is called before the first frame update
     void Start()
     {
 
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
-        intervalo = inicio.intervalo;
 
-            StartCoroutine("Pareddes");
-            StartCoroutine("Paredes");
-            StartCoroutine("PinchoIzqda");
-            StartCoroutine("PinchoDcha");
-            StartCoroutine("PinchoHorizontal");
+        destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
 
-
+        StartCoroutine("Arrayador");
+        CrearColumnasIniciales();
     }
 
-    IEnumerator Pareddes()
-    {
-        
 
+    IEnumerator Arrayador()
+    { 
 
-        for (int n = 0; ; n++)
+        while (destruirNave.alive)
         {
+            float intervalo = inicio.intervalo;
             float aleatorioX = Random.Range(-13, 13);
             float aleatorioY = Random.Range(-2.34f, 20);
 
             Vector3 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
 
+            int nivel = inicio.nivel;
+            int randomNum;
+
+            if(nivel == 1)
+            {
+                randomNum = Random.Range(0,4);
+            }
+
+            else if(nivel == 2)
+            {
+                randomNum = Random.Range(3, 11);
+            }
+
+            else if (nivel == 3)
+            {
+                randomNum = Random.Range(12, 20);
+            }
+
+            else if (nivel == 4)
+            {
+                randomNum = Random.Range(4, 20);
+            }
+
+            else if (nivel == 5)
+            {
+                randomNum = Random.Range(4, 23);
+            }
+
+            else
+            {
+                randomNum = Random.Range(0, arrayObst.Length);
+            }
 
 
-            Instantiate(ladrillo, newPos, Quaternion.identity);
+
+            Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
 
             yield return new WaitForSeconds(intervalo);
-        }
 
-        
+
+        }
 
     }
 
-    IEnumerator Paredes()
+
+    int distPrimerObst = 80;
+    float distanciaEntreObstaculos = 20;
+    void CrearColumnasIniciales()
     {
 
+        float numColumnasIniciales = (transform.position.z - distPrimerObst) / distanciaEntreObstaculos;
+        numColumnasIniciales = Mathf.Round(numColumnasIniciales); 
 
 
-        for (int n = 0; ; n++)
+        for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
-            float aleatorioX = Random.Range(-13, 13);
-            float aleatorioY = Random.Range(-2.34f, 20);
+            Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), Random.Range(-2.34f, 20), n);
+            Instantiate(arrayObst[Random.Range(0,2)], initColPos, Quaternion.identity);
 
-            Vector3 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
-
-
-
-            Instantiate(esfera, newPos, Quaternion.identity);
-
-            yield return new WaitForSeconds(0.3f);
-        }
-
-
-
-    }
-
-
-    IEnumerator PinchoIzqda()
-    {
-
-
-
-        for (int n = 0; ; n++)
-        {
-            float aleatorioX = Random.Range(-5, 13);
-
-            Vector3 newPos = new Vector3(aleatorioX, transform.position.y, transform.position.z);
-
-
-
-            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0,0,20));
-            
-
-            yield return new WaitForSeconds(0.7f);
-        }
-
-
-
-
-
-    }
-
-    IEnumerator PinchoDcha()
-    {
-        for (int n = 0; ; n++)
-        {
-            yield return new WaitForSeconds(0.3f);
-            float aleatorioX = Random.Range(-13, 5);
-
-            Vector3 newPos = new Vector3(aleatorioX, transform.position.y, transform.position.z);
-
-
-
-            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0, 0, -20));
-
-
-            yield return new WaitForSeconds(0.7f);
         }
     }
 
-    IEnumerator PinchoHorizontal()
-    {
-        for (int n = 0; ; n++)
-        {
-            yield return new WaitForSeconds(0.3f);
-            float aleatorioY = Random.Range(-2.34f, 20);
-
-            Vector3 newPos = new Vector3(-13, aleatorioY, transform.position.z);
-
-
-
-            Instantiate(pinchoIzqda, newPos, Quaternion.Euler(0, 0, -110));
-
-
-            yield return new WaitForSeconds(0.7f);
-        }
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        print(intervalo);
-    }
 }
