@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inicio : MonoBehaviour
 {
@@ -12,12 +13,27 @@ public class Inicio : MonoBehaviour
     public int nivel = 1;
     public float intervalo;
     public float distanciaEntreObstaculos = 10;
+    public Text puntuacion;
+    public static int puntos;
     // Start is called before the first frame update
     void Start()
     {
+        puntuacion.text = "Puntuación";
+        puntuacion.color = Color.white;
+
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
 
         StartCoroutine("contador");
+        StartCoroutine("contadorDePuntos");
+    }
+
+    IEnumerator contadorDePuntos()
+    {
+        while (true)
+        {
+            puntos++;
+             yield return new WaitForSeconds(1f);
+        }
     }
 
     IEnumerator contador()
@@ -56,6 +72,6 @@ public class Inicio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(velGeneral);
+        
     }
 }

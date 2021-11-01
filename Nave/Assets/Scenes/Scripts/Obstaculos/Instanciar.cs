@@ -23,6 +23,7 @@ public class Instanciar : MonoBehaviour
         StartCoroutine("Arrayador");
         StartCoroutine("Piedras");
         CrearColumnasIniciales();
+        CrearPiedrasIniciales();
     }
 
 
@@ -145,6 +146,22 @@ public class Instanciar : MonoBehaviour
         {
             Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), Random.Range(-2.88f, 20), n);
             Instantiate(arrayObst[Random.Range(0,2)], initColPos, Quaternion.identity);
+
+        }
+    }
+
+
+    void CrearPiedrasIniciales()
+    {
+
+        float numColumnasIniciales = (transform.position.z - distPrimerObst) / distanciaEntreObstaculos;
+        numColumnasIniciales = Mathf.Round(numColumnasIniciales);
+
+
+        for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
+        {
+            Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), -2.88f, n);
+            Instantiate(arrayObstPiedras[Random.Range(0, 2)], initColPos, Quaternion.identity);
 
         }
     }

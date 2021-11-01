@@ -8,11 +8,11 @@ public class DestruirNave : MonoBehaviour
     private Rigidbody rigibody;
     private Movimiento movimiento;
 
-
     public GameObject Iniciar;
     private Inicio inicio;
     public bool alive = true;
 
+    public bool powerUp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,11 @@ public class DestruirNave : MonoBehaviour
             Destroy(gameObject);
             inicio.velGeneral = 0;
             alive = false;
+        }
+
+        if (other.gameObject.CompareTag("PowerUp"))
+        {
+            powerUp = true;
         }
 
         if (other.gameObject.CompareTag("Suelo"))

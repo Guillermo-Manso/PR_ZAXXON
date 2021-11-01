@@ -19,7 +19,7 @@ public class Movimiento : MonoBehaviour
     public void Update()
     {
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonDown("ModoAvion"))
         {
             if (switcha)
             {
@@ -30,7 +30,8 @@ public class Movimiento : MonoBehaviour
             }
             else
             {
-                //rigibody.AddForce(transform.up * 10);
+                rigibody.constraints = RigidbodyConstraints.FreezePositionY;
+
                 modoAvion = true;
                 switcha = true;
             }
