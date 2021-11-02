@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6384106987271083915}
   m_Layer: 0
   m_Name: Ventilador
-  m_TagString: Obstaculo
+  m_TagString: Ventilador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7a38c967e8896419a9f77334aea3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NaveTanque: {fileID: 0}
   Iniciar: {fileID: 0}
 --- !u!114 &6384106987271083915
 MonoBehaviour:

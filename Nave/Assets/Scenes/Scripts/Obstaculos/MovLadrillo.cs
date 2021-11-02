@@ -50,4 +50,12 @@ public class MovLadrillo : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter(Collider Esfera)
+    {
+        if (Esfera.gameObject.name == "NaveTanque")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

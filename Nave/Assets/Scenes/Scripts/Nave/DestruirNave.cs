@@ -11,8 +11,10 @@ public class DestruirNave : MonoBehaviour
     public GameObject Iniciar;
     private Inicio inicio;
     public bool alive = true;
-
     public bool powerUp = false;
+
+    public int vidas;
+    int v = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,20 +22,37 @@ public class DestruirNave : MonoBehaviour
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
 
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
+        vidas = 3;
     }
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Obstaculo"))
+        if (other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador"))
         {
-            Destroy(gameObject);
-            inicio.velGeneral = 0;
-            alive = false;
+            if (vidas > 0)
+            {
+                vidas--;
+            }
+
+            else if (vidas <= 0)
+            {
+                Destroy(gameObject);
+                inicio.velGeneral = 0;
+                alive = false;
+            }
+            
         }
 
         if (other.gameObject.CompareTag("PowerUp"))
         {
             powerUp = true;
+            v++;
+            print(v);
+            if(v == 5)
+            {
+                vidas++;
+                v = 0;
+            }
         }
 
         if (other.gameObject.CompareTag("Suelo"))

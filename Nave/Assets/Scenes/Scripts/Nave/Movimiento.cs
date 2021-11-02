@@ -7,7 +7,7 @@ public class Movimiento : MonoBehaviour
     Rigidbody rigibody;
 
 
-    [SerializeField] float speed = 15;
+    [SerializeField] float speed = 10;
     public bool modoAvion = true;
     public bool switcha = true;
     // Start is called before the first frame update

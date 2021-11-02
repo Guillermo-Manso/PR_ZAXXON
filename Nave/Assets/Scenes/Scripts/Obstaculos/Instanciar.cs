@@ -36,7 +36,7 @@ public class Instanciar : MonoBehaviour
             float aleatorioX = Random.Range(-13, 13);
             float aleatorioY = Random.Range(-2.88f, 21.5f);
 
-            Vector3 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
+            Vector3 newPos;
 
             int nivel = inicio.nivel;
             int randomNum;
@@ -53,17 +53,17 @@ public class Instanciar : MonoBehaviour
 
             else if (nivel == 3)
             {
-                randomNum = Random.Range(12, 20);
+                randomNum = Random.Range(4, 20);
             }
 
             else if (nivel == 4)
             {
-                randomNum = Random.Range(4, 20);
+                randomNum = Random.Range(4, 23);
             }
 
             else if (nivel == 5)
             {
-                randomNum = Random.Range(4, 23);
+                randomNum = Random.Range(4, arrayObst.Length);
             }
 
             else
@@ -73,8 +73,18 @@ public class Instanciar : MonoBehaviour
 
 
 
-            Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
 
+            if (arrayObst[randomNum].tag == "Ventilador")
+            {
+                newPos = new Vector3(0, 10, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
+
+            else
+            {
+                newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
             yield return new WaitForSeconds(intervalo);
 
 
@@ -144,9 +154,18 @@ public class Instanciar : MonoBehaviour
 
         for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
-            Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), Random.Range(-2.88f, 20), n);
-            Instantiate(arrayObst[Random.Range(0,2)], initColPos, Quaternion.identity);
+            
+            if (arrayObst[Random.Range(0, 2)].tag == "Ventilador")
+            {
+                Vector3 initColPos = new Vector3(0, 10, n);
+                Instantiate(arrayObst[Random.Range(0, 2)], initColPos, Quaternion.identity);
+            }
 
+            else
+            {
+                Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), Random.Range(-2.88f, 20), n);
+                Instantiate(arrayObst[Random.Range(0, 2)], initColPos, Quaternion.identity);
+            }
         }
     }
 
