@@ -8,6 +8,11 @@ TagManager:
   - PowerUp
   - Suelo
   - Ventilador
+  - Nave
+  - PinchoAbajo
+  - PinchoArriba
+  - PinchoDcha
+  - PinchoIzqda
   layers:
   - Default
   - TransparentFX
@@ -15,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstaculo
   - 
   - 
   - 

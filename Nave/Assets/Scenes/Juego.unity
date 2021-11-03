@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 641712800}
   m_Layer: 0
   m_Name: Nave
-  m_TagString: Untagged
+  m_TagString: Nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 1413719743}
   m_Layer: 0
   m_Name: InstanciadorObsta
-  m_TagString: Untagged
+  m_TagString: Nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,15 +883,33 @@ MonoBehaviour:
   - {fileID: 5705225351788992503, guid: 46024e8d7ba99a54ebd4e8015afd17a3, type: 3}
   - {fileID: 5705225351788992503, guid: 46024e8d7ba99a54ebd4e8015afd17a3, type: 3}
   - {fileID: 5705225351788992503, guid: 46024e8d7ba99a54ebd4e8015afd17a3, type: 3}
+  - {fileID: 5705225351788992503, guid: 3d759138196310c45b4fad2d01ade29c, type: 3}
+  - {fileID: 5705225351788992503, guid: 3d759138196310c45b4fad2d01ade29c, type: 3}
+  - {fileID: 5705225351788992503, guid: 3d759138196310c45b4fad2d01ade29c, type: 3}
+  - {fileID: 5705225351788992503, guid: 3d759138196310c45b4fad2d01ade29c, type: 3}
+  - {fileID: 5705225351788992503, guid: 93e5ec1917fcc224d805767261a3d65f, type: 3}
+  - {fileID: 5705225351788992503, guid: 93e5ec1917fcc224d805767261a3d65f, type: 3}
+  - {fileID: 5705225351788992503, guid: 93e5ec1917fcc224d805767261a3d65f, type: 3}
+  - {fileID: 5705225351788992503, guid: 93e5ec1917fcc224d805767261a3d65f, type: 3}
   - {fileID: 3327394939416105685, guid: 090178221e7f15e498ea4cdcb1b9b707, type: 3}
-  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
-  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
-  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
-  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
   - {fileID: 5705225351788992503, guid: c9b3e8410fed67d449947df5e5a05f44, type: 3}
   - {fileID: 5705225351788992503, guid: c9b3e8410fed67d449947df5e5a05f44, type: 3}
   - {fileID: 5705225351788992503, guid: c9b3e8410fed67d449947df5e5a05f44, type: 3}
   - {fileID: 5705225351788992503, guid: c9b3e8410fed67d449947df5e5a05f44, type: 3}
+  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
+  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
+  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
+  - {fileID: 5705225351788992503, guid: fba5b8f0afcc87a4eb1960d79795acce, type: 3}
+  - {fileID: 3327394939416105685, guid: 090178221e7f15e498ea4cdcb1b9b707, type: 3}
+  - {fileID: 5705225351788992503, guid: 1637d37ba56a9bc4e936ef99af0ff59f, type: 3}
+  - {fileID: 5705225351788992503, guid: 1637d37ba56a9bc4e936ef99af0ff59f, type: 3}
+  - {fileID: 5705225351788992503, guid: 1637d37ba56a9bc4e936ef99af0ff59f, type: 3}
+  - {fileID: 5705225351788992503, guid: 1637d37ba56a9bc4e936ef99af0ff59f, type: 3}
+  - {fileID: 5705225351788992503, guid: ccd5d81083898e84ea84503cfc2b8453, type: 3}
+  - {fileID: 5705225351788992503, guid: ccd5d81083898e84ea84503cfc2b8453, type: 3}
+  - {fileID: 5705225351788992503, guid: ccd5d81083898e84ea84503cfc2b8453, type: 3}
+  - {fileID: 5705225351788992503, guid: ccd5d81083898e84ea84503cfc2b8453, type: 3}
+  - {fileID: 3088459669772401000, guid: 7a6ae874a494d5340be386d2011beb67, type: 3}
   - {fileID: 3088459669772401000, guid: 7a6ae874a494d5340be386d2011beb67, type: 3}
   - {fileID: 3088459669772401000, guid: 7a6ae874a494d5340be386d2011beb67, type: 3}
   - {fileID: 3088459669772401000, guid: 7a6ae874a494d5340be386d2011beb67, type: 3}
@@ -965,6 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NaveTanque: {fileID: 0}
+  Nave: {fileID: 0}
   velGeneral: 0
   nivel: 1
   intervalo: 0
@@ -1438,7 +1457,7 @@ GameObject:
   - component: {fileID: 7457472519274634675}
   m_Layer: 0
   m_Name: NaveTanque
-  m_TagString: Untagged
+  m_TagString: Nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

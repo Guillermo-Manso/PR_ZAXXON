@@ -27,7 +27,7 @@ public class DestruirNave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador"))
+        if (other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
         {
             if (vidas > 0)
             {
@@ -40,7 +40,7 @@ public class DestruirNave : MonoBehaviour
                 inicio.velGeneral = 0;
                 alive = false;
             }
-            
+                Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("PowerUp"))
@@ -66,6 +66,11 @@ public class DestruirNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            vidas = vidas + 10000;
+            //inicio.velGeneral = inicio.velGeneral + 70;
+            inicio.nivel++;
+        }
     }
 }

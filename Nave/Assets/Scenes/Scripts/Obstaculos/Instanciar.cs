@@ -48,22 +48,22 @@ public class Instanciar : MonoBehaviour
 
             else if(nivel == 2)
             {
-                randomNum = Random.Range(3, 11);
+                randomNum = Random.Range(3, 20);
             }
 
             else if (nivel == 3)
             {
-                randomNum = Random.Range(4, 20);
+                randomNum = Random.Range(3, 37);
             }
 
             else if (nivel == 4)
             {
-                randomNum = Random.Range(4, 23);
+                randomNum = Random.Range(3, 41);
             }
 
             else if (nivel == 5)
             {
-                randomNum = Random.Range(4, arrayObst.Length);
+                randomNum = Random.Range(0, arrayObst.Length);
             }
 
             else
@@ -74,20 +74,43 @@ public class Instanciar : MonoBehaviour
 
 
 
-            if (arrayObst[randomNum].tag == "Ventilador")
+            if (arrayObst[randomNum].CompareTag("Ventilador"))
             {
                 newPos = new Vector3(0, 10, transform.position.z);
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
             }
+            
+            else if (arrayObst[randomNum].CompareTag("PinchoAbajo"))
+            {
+                newPos = new Vector3(aleatorioX, 5.92f, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
+            
+            else if (arrayObst[randomNum].CompareTag("PinchoArriba"))
+            {
+                newPos = new Vector3(aleatorioX, 14.26f, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
+            
+            if (arrayObst[randomNum].CompareTag("PinchoIzqda"))
+            {
+                newPos = new Vector3(-9.4f, aleatorioY, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
 
-            else
+            else if (arrayObst[randomNum].CompareTag("PinchoDcha"))
+            {
+                newPos = new Vector3(6.28f, aleatorioY, transform.position.z);
+                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+            }
+            
+            else if (arrayObst[randomNum].CompareTag("Obstaculo"))
             {
                 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
             }
+            
             yield return new WaitForSeconds(intervalo);
-
-
         }
 
     }
@@ -116,7 +139,6 @@ public class Instanciar : MonoBehaviour
 
             else if (nivel == 3)
             {
-                intervalo = intervalo / 2;
                 randomNum = Random.Range(12, 20);
             }
 
@@ -154,18 +176,8 @@ public class Instanciar : MonoBehaviour
 
         for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
-            
-            if (arrayObst[Random.Range(0, 2)].tag == "Ventilador")
-            {
-                Vector3 initColPos = new Vector3(0, 10, n);
-                Instantiate(arrayObst[Random.Range(0, 2)], initColPos, Quaternion.identity);
-            }
-
-            else
-            {
                 Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), Random.Range(-2.88f, 20), n);
                 Instantiate(arrayObst[Random.Range(0, 2)], initColPos, Quaternion.identity);
-            }
         }
     }
 

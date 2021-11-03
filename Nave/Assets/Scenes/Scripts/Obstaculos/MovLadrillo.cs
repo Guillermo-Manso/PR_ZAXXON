@@ -37,25 +37,19 @@ public class MovLadrillo : MonoBehaviour
         {
             StartCoroutine("DestruirTodo");
         }
-        /*
-        if(destruirNave.powerUp == true)
-        {
-            Destroy(gameObject);
-        }
-        */
     }
 
     IEnumerator DestruirTodo()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter(Collider Esfera)
+    public void OnTriggerEnter(Collider other)
     {
-        if (Esfera.gameObject.name == "NaveTanque")
+        if (other.gameObject.CompareTag("Nave"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject);    
         }
     }
 }

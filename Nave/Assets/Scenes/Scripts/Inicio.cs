@@ -15,7 +15,7 @@ public class Inicio : MonoBehaviour
     public float velGeneral;
     public int nivel = 1;
     public float intervalo;
-    public float distanciaEntreObstaculos = 20;
+    public float distanciaEntreObstaculos = 15;
     public Text puntuacion;
     public static float puntos;
     public Text nivelador;
