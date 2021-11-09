@@ -11,24 +11,29 @@ public class Inicio : MonoBehaviour
     public GameObject Nave;
     private Movimiento movimiento;
 
+    [SerializeField] Slider vidaSlider;
+    [SerializeField] Slider gasSlider;
 
     public float velGeneral;
     public int nivel = 1;
     public float intervalo;
-    public float distanciaEntreObstaculos = 15;
+    public float distanciaEntreObstaculos = 12;
     public Text puntuacion;
-    public static float puntos;
+    public float puntos;
     public Text nivelador;
-    public Text vidass;
     // Start is called before the first frame update
     void Start()
     {
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
+        if (destruirNave.alive == true)
+        {
+            StartCoroutine("contador");
+            StartCoroutine("contadorDePuntos");
+            StartCoroutine("contadorDeVelocidad");
+        }
 
-        StartCoroutine("contador");
-        StartCoroutine("contadorDePuntos");
-        StartCoroutine("contadorDeVelocidad");
+        
     }
 
     IEnumerator contadorDePuntos()
@@ -37,12 +42,12 @@ public class Inicio : MonoBehaviour
         {
             if(movimiento.modoAvion == true)
             {
-                puntos = puntos + 10 * velGeneral;
+                puntos = Mathf.Round(puntos + 10 * velGeneral);
                 yield return new WaitForSeconds(0.1f);
             }
             else
             {
-                puntos = puntos + 12 * velGeneral;
+                puntos = Mathf.Round(puntos + 6 * velGeneral);
                 yield return new WaitForSeconds(0.1f);
             }
         }
@@ -50,7 +55,7 @@ public class Inicio : MonoBehaviour
 
     IEnumerator contador()
     {
-        velGeneral = 20;
+        velGeneral = 30;
         int contar = 0;
         float cambioNivel = 30;
         
@@ -101,14 +106,33 @@ public class Inicio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        vidaSlider.value = destruirNave.vidas;
+        gasSlider.value = movimiento.gasolina;
+
+
         puntuacion.text = Mathf.Round(puntos).ToString();
         puntuacion.color = Color.white;
 
-        nivelador.text = nivel.ToString();
+        nivelador.text ="Nivel " + nivel.ToString();
         nivelador.color = Color.white;
 
-        vidass.text = destruirNave.vidas.ToString();
-        vidass.color = Color.white;
-        //print(velGeneral);
+        if (destruirNave.alive == false)
+        {
+            if (puntos > GameManager.highScore)
+            {
+                GameManager.highScore = puntos;
+            }
+
+            else if (puntos < GameManager.highScore && puntos > GameManager.score2)
+            {
+                GameManager.score2 = puntos;
+            }
+
+            else if (puntos < GameManager.score2)
+            {
+                GameManager.score3 = puntos;
+            }
+        }
+
     }
 }

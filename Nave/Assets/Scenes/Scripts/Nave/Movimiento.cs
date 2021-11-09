@@ -10,10 +10,13 @@ public class Movimiento : MonoBehaviour
     [SerializeField] float speed = 10;
     public bool modoAvion = true;
     public bool switcha = true;
+    public int gasolina;
     // Start is called before the first frame update
     void Start()
     {
         rigibody = GetComponent<Rigidbody>();
+        gasolina = 400;
+        StartCoroutine("BajarGasolina");
     }
     // Update is called once per frame
     public void Update()
@@ -24,21 +27,37 @@ public class Movimiento : MonoBehaviour
             if (switcha)
             {
                 rigibody.constraints = RigidbodyConstraints.None;
-                
+                StopCoroutine("BajarGasolina");
                 modoAvion = false;
-                switcha = false;
+                if (gasolina >= 0)
+                {
+                    switcha = false;
+                }
             }
             else
             {
                 rigibody.constraints = RigidbodyConstraints.FreezePositionY;
-
+                StartCoroutine("BajarGasolina");
                 modoAvion = true;
                 switcha = true;
             }
 
         }
+        
+        if (gasolina == 0)
+        {
+            rigibody.constraints = RigidbodyConstraints.None;
 
+            modoAvion = false;
+            switcha = false;
+            if (transform.position.y < -2.88f)
+            {
+                rigibody.constraints = RigidbodyConstraints.FreezePositionY;
+            }
 
+        }
+         
+        //print(gasolina);
         if (modoAvion == true)
         {
             //Ascenso desde el suelo
@@ -104,6 +123,15 @@ public class Movimiento : MonoBehaviour
         }
 
 
+    }
+
+    IEnumerator BajarGasolina()
+    {
+        while (gasolina >= 0)
+        {
+            gasolina--;
+            yield return new WaitForSeconds(0.075f);
+        }
     }
 
 }

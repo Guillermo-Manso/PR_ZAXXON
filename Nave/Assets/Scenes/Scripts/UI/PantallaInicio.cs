@@ -16,4 +16,19 @@ public class PantallaInicio : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Highscores()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Configuracion()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Atras()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

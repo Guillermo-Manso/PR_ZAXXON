@@ -13,6 +13,7 @@ public class DestruirNave : MonoBehaviour
     public bool alive = true;
     public bool powerUp = false;
 
+    public bool escudo = false;
     public int vidas;
     int v = 0;
     // Start is called before the first frame update
@@ -22,25 +23,34 @@ public class DestruirNave : MonoBehaviour
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
 
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
-        vidas = 3;
+        vidas = 100;
     }
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
         {
-            if (vidas > 0)
+            if (escudo == false)
             {
-                vidas--;
+                if (vidas > 0)
+                {
+                    vidas = vidas - 34;
+                }
+
+                else if (vidas <= 0)
+                {
+                    Destroy(gameObject);
+                    inicio.velGeneral = 0;
+                    alive = false;
+                }
+                Destroy(other.gameObject);
             }
 
-            else if (vidas <= 0)
+            else
             {
-                Destroy(gameObject);
-                inicio.velGeneral = 0;
-                alive = false;
+                escudo = false;
             }
-                Destroy(other.gameObject);
+
         }
 
         if (other.gameObject.CompareTag("PowerUp"))
@@ -50,12 +60,18 @@ public class DestruirNave : MonoBehaviour
             print(v);
             if(v == 5)
             {
-                vidas++;
+                escudo = true;
                 v = 0;
             }
         }
 
-        if (other.gameObject.CompareTag("Suelo"))
+        if (other.gameObject.CompareTag("Gasolina"))
+        {
+            movimiento.gasolina = 400;
+            Destroy(other.gameObject);
+        }
+
+            if (other.gameObject.CompareTag("Suelo"))
         {
             rigibody.constraints = RigidbodyConstraints.FreezePositionY;
             movimiento.transform.position = new Vector3(transform.position.x, -2.88f, 0);
@@ -71,6 +87,15 @@ public class DestruirNave : MonoBehaviour
             vidas = vidas + 10000;
             //inicio.velGeneral = inicio.velGeneral + 70;
             inicio.nivel++;
+
+        }
+
+
+        if (vidas <= 0)
+        {
+            Destroy(gameObject);
+            inicio.velGeneral = 0;
+            alive = false;
         }
     }
 }

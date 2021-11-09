@@ -7,6 +7,8 @@ public class Instanciar : MonoBehaviour
     [SerializeField] GameObject[] arrayObst;
     [SerializeField] GameObject[] arrayObstPiedras;
 
+    [SerializeField] GameObject Gas;
+
     public GameObject Iniciar;
     private Inicio inicio;
 
@@ -24,6 +26,8 @@ public class Instanciar : MonoBehaviour
         StartCoroutine("Piedras");
         CrearColumnasIniciales();
         CrearPiedrasIniciales();
+
+        StartCoroutine("Gasolina");
     }
 
 
@@ -49,6 +53,7 @@ public class Instanciar : MonoBehaviour
             else if(nivel == 2)
             {
                 randomNum = Random.Range(3, 20);
+                inicio.distanciaEntreObstaculos = inicio.distanciaEntreObstaculos / 2;
             }
 
             else if (nivel == 3)
@@ -194,6 +199,17 @@ public class Instanciar : MonoBehaviour
             Vector3 initColPos = new Vector3(Random.Range(-13f, 13f), -2.88f, n);
             Instantiate(arrayObstPiedras[Random.Range(0, 2)], initColPos, Quaternion.identity);
 
+        }
+    }
+
+    IEnumerator Gasolina()
+    {
+        while (destruirNave.alive == true)
+        {
+            float aleatorioX = Random.Range(-13, 13);
+            Vector3 newPos = new Vector3(aleatorioX, -2.14f, transform.position.z);
+            Instantiate(Gas, newPos, Quaternion.identity);
+            yield return new WaitForSeconds(20f);
         }
     }
 

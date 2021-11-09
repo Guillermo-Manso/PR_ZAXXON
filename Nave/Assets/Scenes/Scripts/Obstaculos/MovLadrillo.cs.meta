@@ -4,7 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Iniciar: {fileID: 8346302990691248059, guid: 286ca168680440c4c9bba80150b3292b, type: 3}
+  - NaveTanque: {instanceID: 0}
+  - Iniciar: {instanceID: 0}
+  - Button: {fileID: 6881188240719737316, guid: 64d101f1dd10a2f4497069e9895ffb9e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
