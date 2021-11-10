@@ -13,6 +13,11 @@ public class Inicio : MonoBehaviour
 
     [SerializeField] Slider vidaSlider;
     [SerializeField] Slider gasSlider;
+    [SerializeField] Slider ShieldSlider;
+
+    GameObject GameOver;
+    Canvas MenuGameOver;
+    [SerializeField] Button BotonPorDefecto;
 
     public float velGeneral;
     public int nivel = 1;
@@ -26,6 +31,15 @@ public class Inicio : MonoBehaviour
     {
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
+
+
+
+        GameOver = GameObject.Find("MenuGameOver");
+        MenuGameOver = GameOver.GetComponent<Canvas>();
+        MenuGameOver.enabled = false;
+
+
+
         if (destruirNave.alive == true)
         {
             StartCoroutine("contador");
@@ -78,12 +92,6 @@ public class Inicio : MonoBehaviour
         }
     }
 
-
-    public void GameOver()
-    {
-        velGeneral = 0;
-    }
-
     IEnumerator contadorDeVelocidad()
     {
         while (destruirNave.alive)
@@ -103,11 +111,20 @@ public class Inicio : MonoBehaviour
         
     }
 
+    public void MenuOver()
+    {
+        MenuGameOver.enabled = true;
+        BotonPorDefecto.Select();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        
+
         vidaSlider.value = destruirNave.vidas;
         gasSlider.value = movimiento.gasolina;
+        ShieldSlider.value = destruirNave.cargas;
 
 
         puntuacion.text = Mathf.Round(puntos).ToString();

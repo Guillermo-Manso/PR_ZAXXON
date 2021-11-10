@@ -49,7 +49,6 @@ public class Movimiento : MonoBehaviour
             rigibody.constraints = RigidbodyConstraints.None;
 
             modoAvion = false;
-            switcha = false;
             if (transform.position.y < -2.88f)
             {
                 rigibody.constraints = RigidbodyConstraints.FreezePositionY;

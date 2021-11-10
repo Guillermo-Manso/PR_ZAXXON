@@ -13,19 +13,11 @@ public class MovLadrillo : MonoBehaviour
     public GameObject Iniciar;
     private Inicio inicio;
 
-    GameObject GameOver;
-    Canvas MenuGameOver;
-    [SerializeField] Button Button;
 
     float velocidad;
     // Start is called before the first frame update
     void Start()
     {
-        
-
-        GameOver = GameObject.Find("MenuGameOver");
-        MenuGameOver = GameOver.GetComponent<Canvas>();
-        MenuGameOver.enabled = false;
 
         
 
@@ -58,8 +50,7 @@ public class MovLadrillo : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        MenuGameOver.enabled = true;
-        Button.Select();
+        inicio.SendMessage("MenuOver");
     }
 
     public void OnTriggerEnter(Collider other)

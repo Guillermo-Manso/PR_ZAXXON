@@ -15,7 +15,7 @@ public class DestruirNave : MonoBehaviour
 
     public bool escudo = false;
     public int vidas;
-    int v = 0;
+    public int cargas = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,20 +48,20 @@ public class DestruirNave : MonoBehaviour
 
             else
             {
+                Destroy(other.gameObject);
+                cargas = 0;
                 escudo = false;
             }
 
         }
 
-        if (other.gameObject.CompareTag("PowerUp"))
+        if (other.gameObject.CompareTag("PowerUp") && cargas <= 5)
         {
             powerUp = true;
-            v++;
-            print(v);
-            if(v == 5)
+            cargas++;
+            if(cargas == 5)
             {
-                escudo = true;
-                v = 0;
+                escudo = true;;
             }
         }
 

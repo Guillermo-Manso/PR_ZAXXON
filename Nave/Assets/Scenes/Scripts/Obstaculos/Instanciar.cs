@@ -53,7 +53,6 @@ public class Instanciar : MonoBehaviour
             else if(nivel == 2)
             {
                 randomNum = Random.Range(3, 20);
-                inicio.distanciaEntreObstaculos = inicio.distanciaEntreObstaculos / 2;
             }
 
             else if (nivel == 3)
@@ -109,7 +108,7 @@ public class Instanciar : MonoBehaviour
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
             }
             
-            else if (arrayObst[randomNum].CompareTag("Obstaculo"))
+            else if (arrayObst[randomNum].CompareTag("Obstaculo") || arrayObst[randomNum].CompareTag("PowerUp"))
             {
                 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
