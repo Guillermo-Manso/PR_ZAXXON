@@ -118,7 +118,6 @@ public class Movimiento : MonoBehaviour
             {
                 transform.position = new Vector3(-13f, transform.position.y, transform.position.z);
             }
-
         }
 
 

@@ -15,24 +15,18 @@ public class Rotacion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        movimiento = Nave.GetComponent<Movimiento>();
-
+        movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
     }
     void Update()
     {
-        float velocidadRot = 1500f;
         if (movimiento.modoAvion == true)
         {
-            float rotar = Input.GetAxis("Horizontal");
-            transform.Rotate(rotacionZ * Time.deltaTime * rotar * velocidadRot);
-            transform.Rotate(rotacionX * Time.deltaTime * Input.GetAxis("Vertical") * velocidadRot);
+            transform.rotation = Quaternion.AngleAxis(-30 * Input.GetAxis("Horizontal"), Vector3.forward);
         }
 
         else if(movimiento.modoAvion == false)
         {
-            float rotar = Input.GetAxis("Horizontal");
-            transform.Rotate(rotacionY * Time.deltaTime * rotar * velocidadRot);
+            transform.rotation = Quaternion.AngleAxis(30 * Input.GetAxis("Horizontal"), Vector3.up);
         }
         
     }

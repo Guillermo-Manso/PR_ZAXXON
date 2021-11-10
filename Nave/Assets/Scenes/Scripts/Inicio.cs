@@ -26,6 +26,8 @@ public class Inicio : MonoBehaviour
     public Text puntuacion;
     public float puntos;
     public Text nivelador;
+
+    public Text puntuacion2;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +48,6 @@ public class Inicio : MonoBehaviour
             StartCoroutine("contadorDePuntos");
             StartCoroutine("contadorDeVelocidad");
         }
-
-        
     }
 
     IEnumerator contadorDePuntos()
@@ -126,6 +126,8 @@ public class Inicio : MonoBehaviour
         gasSlider.value = movimiento.gasolina;
         ShieldSlider.value = destruirNave.cargas;
 
+        puntuacion2.text = Mathf.Round(puntos).ToString() + " ptos";
+        puntuacion2.color = Color.white;
 
         puntuacion.text = Mathf.Round(puntos).ToString();
         puntuacion.color = Color.white;
@@ -135,17 +137,24 @@ public class Inicio : MonoBehaviour
 
         if (destruirNave.alive == false)
         {
+            StopCoroutine("contador");
+            StopCoroutine("contadorDePuntos");
+            StopCoroutine("contadorDeVelocidad");
+
             if (puntos > GameManager.highScore)
             {
+                GameManager.score3 = GameManager.score2;
+                GameManager.score2 = GameManager.highScore;
                 GameManager.highScore = puntos;
             }
 
             else if (puntos < GameManager.highScore && puntos > GameManager.score2)
             {
+                GameManager.score3 = GameManager.score2;
                 GameManager.score2 = puntos;
             }
 
-            else if (puntos < GameManager.score2)
+            else if (puntos < GameManager.score2 && puntos > GameManager.score3)
             {
                 GameManager.score3 = puntos;
             }

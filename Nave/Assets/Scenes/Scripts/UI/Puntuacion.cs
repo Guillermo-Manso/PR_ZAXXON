@@ -19,8 +19,8 @@ public class Puntuacion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        highscore.text = Mathf.Round(GameManager.highScore).ToString();
-        score2.text = Mathf.Round(GameManager.score2).ToString();
-        score3.text = Mathf.Round(GameManager.score3).ToString();
+        highscore.text = Mathf.Round(GameManager.highScore).ToString() + " ptos";
+        score2.text = Mathf.Round(GameManager.score2).ToString() + " ptos";
+        score3.text = Mathf.Round(GameManager.score3).ToString() + " ptos";
     }
 }
