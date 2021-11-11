@@ -39,7 +39,7 @@ public class DestruirNave : MonoBehaviour
 
                 else if (vidas <= 0)
                 {
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                     inicio.velGeneral = 0;
                     alive = false;
                 }
@@ -68,6 +68,7 @@ public class DestruirNave : MonoBehaviour
         if (other.gameObject.CompareTag("Gasolina"))
         {
             movimiento.gasolina = 400;
+            movimiento.switcha = false;
             Destroy(other.gameObject);
         }
 

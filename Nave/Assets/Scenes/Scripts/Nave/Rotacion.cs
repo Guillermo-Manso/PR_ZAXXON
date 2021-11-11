@@ -7,10 +7,6 @@ public class Rotacion : MonoBehaviour
 
     public GameObject Nave;
     private Movimiento movimiento;
-    Vector3 rotacionZ = new Vector3(0f, 0f, -1f);
-    Vector3 rotacionY = new Vector3(0f, -1f, 0f);
-    Vector3 rotacionX = new Vector3(-1f, 0f, 0f);
-
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +17,12 @@ public class Rotacion : MonoBehaviour
     {
         if (movimiento.modoAvion == true)
         {
-            transform.rotation = Quaternion.AngleAxis(-30 * Input.GetAxis("Horizontal"), Vector3.forward);
+            transform.rotation = Quaternion.Euler(-30 * Input.GetAxis("Vertical"), 0, -30 * Input.GetAxis("Horizontal"));
         }
 
         else if(movimiento.modoAvion == false)
         {
-            transform.rotation = Quaternion.AngleAxis(30 * Input.GetAxis("Horizontal"), Vector3.up);
+            transform.rotation = Quaternion.Euler(0, 30 * Input.GetAxis("Horizontal"), 0);
         }
         
     }
