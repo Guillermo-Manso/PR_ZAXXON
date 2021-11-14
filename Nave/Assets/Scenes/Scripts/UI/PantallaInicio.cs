@@ -31,4 +31,9 @@ public class PantallaInicio : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SaliJuego()
+    {
+        Application.Quit();
+    }
+
 }

@@ -32,14 +32,15 @@ public class Instanciar : MonoBehaviour
 
 
     IEnumerator Arrayador()
-    { 
+    {
+
+        int contadorVentilador = 3;
 
         while (destruirNave.alive)
         {
             float intervalo = inicio.intervalo;
             float aleatorioX = Random.Range(-13, 13);
             float aleatorioY = Random.Range(-2.88f, 21.5f);
-
             Vector3 newPos;
 
             int nivel = inicio.nivel;
@@ -80,8 +81,17 @@ public class Instanciar : MonoBehaviour
 
             if (arrayObst[randomNum].CompareTag("Ventilador"))
             {
-                newPos = new Vector3(0, 10, transform.position.z);
-                Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+                if (contadorVentilador == 3)
+                {
+                    newPos = new Vector3(0, 10, transform.position.z);
+                    Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
+                    contadorVentilador = 0;
+                }
+
+                else
+                {
+                    contadorVentilador++;
+                }
             }
             
             else if (arrayObst[randomNum].CompareTag("PinchoAbajo"))

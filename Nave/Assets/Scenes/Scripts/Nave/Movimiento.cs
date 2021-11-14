@@ -9,6 +9,9 @@ public class Movimiento : MonoBehaviour
     public GameObject NaveTanque;
     private DestruirNave destruirNave;
 
+    public GameObject Iniciar;
+    private Inicio inicio;
+
 
     [SerializeField] float speed = 10;
     public bool modoAvion = true;
@@ -17,6 +20,7 @@ public class Movimiento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
         rigibody = GetComponent<Rigidbody>();
         gasolina = 400;
@@ -25,8 +29,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
-        if (Input.GetButtonDown("ModoAvion"))
+        if (Input.GetButtonDown("ModoAvion") && inicio.movilidad == true)
         {
             if (switcha)
             {
