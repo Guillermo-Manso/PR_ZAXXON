@@ -13,6 +13,8 @@ TagManager:
   - PinchoArriba
   - PinchoDcha
   - PinchoIzqda
+  - Gasolina
+  - Enemigo
   layers:
   - Default
   - TransparentFX

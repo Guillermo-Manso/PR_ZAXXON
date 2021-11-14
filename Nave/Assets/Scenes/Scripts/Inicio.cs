@@ -26,11 +26,11 @@ public class Inicio : MonoBehaviour
     [SerializeField] Button BotonDesactivado;
     [SerializeField] Button BotonDePausa2;
 
-    /*
-    GameObject Config;
+    
+    [SerializeField] GameObject Config;
     Canvas MenuConfig;
     [SerializeField] Button BotonDeConfig;
-    */
+    
     public float velGeneral;
     public int nivel = 1;
     public float intervalo;
@@ -56,11 +56,11 @@ public class Inicio : MonoBehaviour
 
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
-        /*
-        Config = GameObject.Find("MenuConfig");
+        
+        //Config = GameObject.Find("MenuConfig");
         MenuConfig = Config.GetComponent<Canvas>();
         MenuConfig.enabled = false;
-        */
+        
         GameOver = GameObject.Find("MenuGameOver");
         MenuGameOver = GameOver.GetComponent<Canvas>();
         MenuGameOver.enabled = false;
@@ -104,15 +104,13 @@ public class Inicio : MonoBehaviour
         while (destruirNave.alive)
         {
             contar++;
-            //print(contar);
-            intervalo = distanciaEntreObstaculos / velGeneral;
+            intervalo = (distanciaEntreObstaculos / velGeneral) / 2;
 
             yield return new WaitForSeconds(1f);
 
             if (contar >= cambioNivel)
             {
                 nivel++;
-                //print("Nivel " + nivel);
                 contar = 0;
                 cambioNivel = cambioNivel * 1.2f;
                 
@@ -148,6 +146,7 @@ public class Inicio : MonoBehaviour
     public void MenuDesPausar()
     {
         modoPausa = false;
+        MenuConfig.enabled = false;
         MenuPausa.enabled = false;
         Time.timeScale = 1 - Time.timeScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
@@ -160,7 +159,7 @@ public class Inicio : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         movilidad = true;
     }
-    /*
+    
     public void Configurar()
     {
         MenuConfig.enabled = true;
@@ -174,7 +173,7 @@ public class Inicio : MonoBehaviour
         MenuPausa.enabled = true;
         BotonDePausa2.Select();
     }
-    */
+    
 
     // Update is called once per frame
     void Update()
@@ -209,7 +208,7 @@ public class Inicio : MonoBehaviour
         puntuacion2.text = Mathf.Round(puntos).ToString() + " ptos";
         puntuacion2.color = Color.white;
 
-        puntuacion.text = Mathf.Round(puntos).ToString();
+        puntuacion.text = Mathf.Round(puntos).ToString() + " ptos";
         puntuacion.color = Color.white;
 
         nivelador.text ="Nivel " + nivel.ToString();

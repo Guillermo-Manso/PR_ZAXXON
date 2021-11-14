@@ -11,11 +11,12 @@ public class DestruirNave : MonoBehaviour
     public GameObject Iniciar;
     private Inicio inicio;
     public bool alive = true;
-    public bool powerUp = false;
 
-    public bool escudo = false;
     public int vidas;
     public int cargas = 0;
+
+    int daño = 34;
+    int sobrante = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,40 +29,54 @@ public class DestruirNave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
+        if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Obstaculo") ||other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
         {
-            if (escudo == false)
+            if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Ventilador"))
             {
-                if (vidas > 0)
-                {
-                    vidas = vidas - 34;
-                }
-
-                else if (vidas <= 0)
-                {
-                    //Destroy(gameObject);
-                    inicio.velGeneral = 0;
-                    alive = false;
-                }
-                Destroy(other.gameObject);
+                daño = 50;
             }
 
+            else if (other.gameObject.CompareTag("Obstaculo"))
+            {
+                daño = 20;
+            }
             else
             {
-                Destroy(other.gameObject);
-                cargas = 0;
-                escudo = false;
+                daño = 34;
             }
+
+            cargas = cargas - daño;
+
+            if (cargas <= 0)
+            {
+                sobrante = -cargas;
+            }
+
+            if (vidas > 0)
+            {
+                if (cargas <= 0)
+                {
+                    vidas = vidas - sobrante;
+                    cargas = 0;
+                }
+            }
+
+            else if (vidas <= 0)
+            {
+                inicio.velGeneral = 0;
+                alive = false;
+            }
+            Destroy(other.gameObject);
 
         }
 
-        if (other.gameObject.CompareTag("PowerUp") && cargas <= 5)
+        if (other.gameObject.CompareTag("PowerUp") && cargas <= 100)
         {
-            powerUp = true;
-            cargas++;
-            if(cargas == 5)
+            StartCoroutine("SubirEscudo");
+            //cargas = cargas + 10;
+            if(cargas >= 100)
             {
-                escudo = true;;
+                cargas = 100;
             }
         }
 
@@ -72,12 +87,23 @@ public class DestruirNave : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-            if (other.gameObject.CompareTag("Suelo"))
+        if (other.gameObject.CompareTag("Suelo"))
         {
             rigibody.constraints = RigidbodyConstraints.FreezePositionY;
             movimiento.transform.position = new Vector3(transform.position.x, -2.88f, 0);
         }
 
+    }
+
+    IEnumerator SubirEscudo()
+    {
+        int f = 0;
+        while (f <= 10)
+        {
+            f++;
+            cargas++;
+            yield return new WaitForSeconds(0.0125f);
+        }
     }
 
     // Update is called once per frame
@@ -86,9 +112,7 @@ public class DestruirNave : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             vidas = vidas + 10000;
-            //inicio.velGeneral = inicio.velGeneral + 70;
             inicio.nivel++;
-
         }
 
 

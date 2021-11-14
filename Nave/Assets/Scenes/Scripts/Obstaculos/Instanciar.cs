@@ -118,7 +118,7 @@ public class Instanciar : MonoBehaviour
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
             }
             
-            else if (arrayObst[randomNum].CompareTag("Obstaculo") || arrayObst[randomNum].CompareTag("PowerUp"))
+            else if (arrayObst[randomNum].CompareTag("Obstaculo") || arrayObst[randomNum].CompareTag("PowerUp") || arrayObst[randomNum].CompareTag("Enemigo"))
             {
                 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
