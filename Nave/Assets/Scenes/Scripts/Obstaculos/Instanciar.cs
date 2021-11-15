@@ -213,7 +213,7 @@ public class Instanciar : MonoBehaviour
 
     IEnumerator Gasolina()
     {
-        while (destruirNave.alive == true)
+        while (destruirNave.alive == true && GameManager.modoGasolina == true)
         {
             float aleatorioX = Random.Range(-13, 13);
             Vector3 newPos = new Vector3(aleatorioX, -2.14f, transform.position.z);

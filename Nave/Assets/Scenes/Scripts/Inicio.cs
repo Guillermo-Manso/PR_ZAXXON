@@ -26,6 +26,8 @@ public class Inicio : MonoBehaviour
     [SerializeField] Button BotonDesactivado;
     [SerializeField] Button BotonDePausa2;
 
+    [SerializeField] Image GasImage;
+
     
     [SerializeField] GameObject Config;
     Canvas MenuConfig;
@@ -45,9 +47,24 @@ public class Inicio : MonoBehaviour
 
     public bool configurar = false;
 
+    [SerializeField] Slider diffSlider;
+    public Text tipoDeDificultad;
+    public string letrasDif;
+
+    public string facil = ("Facil");
+    public string normal = ("Normal");
+    public string dificil = ("Dificil");
+    public string muyDificil = ("Muy Dificil");
+
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.modoGasolina == false)
+        {
+            gasSlider.transform.position = new Vector3(0, -100, 0);
+            GasImage.transform.position = new Vector3(0, -100, 0);
+        }
+
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1 - Time.timeScale;
@@ -68,6 +85,8 @@ public class Inicio : MonoBehaviour
         GameOver = GameObject.Find("MenuPausa");
         MenuPausa = GameOver.GetComponent<Canvas>();
         MenuPausa.enabled = false;
+
+        diffSlider.value = GameManager.dificultad;
 
 
         if (destruirNave.alive == true)
@@ -104,8 +123,23 @@ public class Inicio : MonoBehaviour
         while (destruirNave.alive)
         {
             contar++;
-            intervalo = (distanciaEntreObstaculos / velGeneral) / 2;
+            intervalo = distanciaEntreObstaculos / velGeneral;
 
+            if (GameManager.dificultad == 3)
+            {
+                intervalo = intervalo / 2;
+            }
+
+            else if (GameManager.dificultad == 4)
+            {
+                intervalo = intervalo / 3;
+            }
+
+            else if (GameManager.dificultad == 1)
+            {
+                intervalo = intervalo * 1.5f;
+            }
+            
             yield return new WaitForSeconds(1f);
 
             if (contar >= cambioNivel)
@@ -126,12 +160,20 @@ public class Inicio : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f);
                 velGeneral = velGeneral + 0.4f;
+                if (GameManager.dificultad == 4)
+                {
+                    velGeneral = velGeneral + 0.4f;
+                }
             }
 
             else
             {
                 yield return new WaitForSeconds(1f);
                 velGeneral = velGeneral + 0.1f;
+                if (GameManager.dificultad == 4)
+                {
+                    velGeneral = velGeneral + 0.1f;
+                }
             }
         }
         
@@ -178,7 +220,6 @@ public class Inicio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetButtonDown("Pausa") && destruirNave.alive == true)
         {
             if (modoPausa == false)
@@ -200,7 +241,7 @@ public class Inicio : MonoBehaviour
 
         }
     
-
+       
         vidaSlider.value = destruirNave.vidas;
         gasSlider.value = movimiento.gasolina;
         ShieldSlider.value = destruirNave.cargas;
@@ -238,6 +279,31 @@ public class Inicio : MonoBehaviour
                 GameManager.score3 = puntos;
             }
         }
+
+        GameManager.dificultad = diffSlider.value;
+
+        if (GameManager.dificultad == 4)
+        {
+            letrasDif = muyDificil;
+        }
+
+        if (GameManager.dificultad == 3)
+        {
+            letrasDif = dificil;
+        }
+
+        if (GameManager.dificultad == 2)
+        {
+            letrasDif = normal;
+        }
+
+        if (GameManager.dificultad == 1)
+        {
+            letrasDif = facil;
+        }
+
+        tipoDeDificultad.text = letrasDif;
+
 
     }
 }

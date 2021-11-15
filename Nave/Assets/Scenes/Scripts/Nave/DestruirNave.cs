@@ -73,16 +73,11 @@ public class DestruirNave : MonoBehaviour
         if (other.gameObject.CompareTag("PowerUp") && cargas <= 100)
         {
             StartCoroutine("SubirEscudo");
-            //cargas = cargas + 10;
-            if(cargas >= 100)
-            {
-                cargas = 100;
-            }
         }
 
         if (other.gameObject.CompareTag("Gasolina"))
         {
-            movimiento.gasolina = 400;
+            StartCoroutine("SubirGasolina");
             movimiento.switcha = false;
             Destroy(other.gameObject);
         }
@@ -98,11 +93,22 @@ public class DestruirNave : MonoBehaviour
     IEnumerator SubirEscudo()
     {
         int f = 0;
-        while (f <= 10)
+        while (f < 10 && cargas < 100)
         {
             f++;
             cargas++;
             yield return new WaitForSeconds(0.0125f);
+        }
+    }
+
+    IEnumerator SubirGasolina()
+    {
+        int f = 0;
+        while (f <= 100 && movimiento.gasolina <= 400)
+        {
+            f++;
+            movimiento.gasolina = movimiento.gasolina + 4;
+            yield return new WaitForSeconds(0.00125f);
         }
     }
 
@@ -111,8 +117,12 @@ public class DestruirNave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            vidas = vidas + 10000;
             inicio.nivel++;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            vidas = vidas + 10000;
         }
 
 

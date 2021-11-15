@@ -29,7 +29,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetButtonDown("ModoAvion") && inicio.movilidad == true)
+        if (Input.GetButtonDown("ModoAvion") && inicio.movilidad == true && GameManager.modoGasolina == true)
         {
             if (switcha)
             {
@@ -132,7 +132,7 @@ public class Movimiento : MonoBehaviour
 
     IEnumerator BajarGasolina()
     {
-        while (gasolina >= 0 && destruirNave.alive == true)
+        while (gasolina >= 0 && destruirNave.alive == true && GameManager.modoGasolina == true)
         {
             gasolina--;
             yield return new WaitForSeconds(0.075f);
