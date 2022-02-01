@@ -55,6 +55,17 @@
                 },
                 {
                     "name": "",
+                    "id": "15d960fd-2322-4f36-a083-e4de27f44f6d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BotonConfirmacion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9d95d6b1-c6fe-4a85-a620-a30fc958eac9",
                     "path": "<Gamepad>/start",
                     "interactions": "",

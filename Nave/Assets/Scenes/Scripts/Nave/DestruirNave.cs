@@ -51,7 +51,6 @@ public class DestruirNave : MonoBehaviour
             {
                 sobrante = -cargas;
             }
-
             if (vidas > 0)
             {
                 if (cargas <= 0)
@@ -65,6 +64,7 @@ public class DestruirNave : MonoBehaviour
             {
                 inicio.velGeneral = 0;
                 alive = false;
+                Destroy(gameObject);
             }
             Destroy(other.gameObject);
 
@@ -115,6 +115,11 @@ public class DestruirNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (vidas <= 0)
+        {
+            inicio.velGeneral = 0;
+            alive = false;
+            Destroy(gameObject);
+        }
     }
 }
