@@ -215,12 +215,10 @@ public class Inicio : MonoBehaviour
         MenuPausa.enabled = true;
         BotonDePausa2.Select();
     }
-    
 
-    // Update is called once per frame
-    void Update()
+    public void Pausate()
     {
-        if (Input.GetButtonDown("Pausa") && destruirNave.alive == true)
+        if(destruirNave.alive == true)
         {
             if (modoPausa == false)
             {
@@ -232,16 +230,19 @@ public class Inicio : MonoBehaviour
                 MenuPausa.enabled = true;
                 BotonDePausa.Select();
             }
-            
+
             else if (modoPausa == true)
             {
                 movilidad = true;
                 MenuDesPausar();
             }
-
         }
+    }
     
-       
+
+    // Update is called once per frame
+    void Update()
+    {
         vidaSlider.value = destruirNave.vidas;
         gasSlider.value = movimiento.gasolina;
         ShieldSlider.value = destruirNave.cargas;

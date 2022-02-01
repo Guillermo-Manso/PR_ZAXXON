@@ -1,0 +1,71 @@
+{
+    "name": "InputManager",
+    "maps": [
+        {
+            "name": "Hola",
+            "id": "9cc2c514-20d4-43a7-88ab-f5fd83969636",
+            "actions": [
+                {
+                    "name": "MoverNave",
+                    "type": "Value",
+                    "id": "51093846-6048-4914-94bc-aa7bee74b9d7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BotonConfirmacion",
+                    "type": "Button",
+                    "id": "df1afd16-e36f-4860-ad73-8b5fabad3b69",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pausa",
+                    "type": "Button",
+                    "id": "0ae39aa7-5da9-4c1d-9765-cf723b8d438b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c6015f2a-a7dc-45bd-a1d6-bf9f82060546",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoverNave",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1aa9880-1b5f-4cbf-ad9e-9e0332898a90",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BotonConfirmacion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d95d6b1-c6fe-4a85-a620-a30fc958eac9",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

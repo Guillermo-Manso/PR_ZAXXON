@@ -115,22 +115,6 @@ public class DestruirNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            inicio.nivel++;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            vidas = vidas + 10000;
-        }
 
-
-        if (vidas <= 0)
-        {
-            Destroy(gameObject);
-            inicio.velGeneral = 0;
-            alive = false;
-        }
     }
 }

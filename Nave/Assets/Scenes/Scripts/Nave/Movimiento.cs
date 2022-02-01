@@ -6,6 +6,8 @@ public class Movimiento : MonoBehaviour
 {
     Rigidbody rigibody;
 
+    InputManager inputManager;
+
     public GameObject NaveTanque;
     private DestruirNave destruirNave;
 
@@ -13,10 +15,29 @@ public class Movimiento : MonoBehaviour
     private Inicio inicio;
 
 
+    Vector2 joyIzqdo;
+
+
     [SerializeField] float speed = 10;
     public bool modoAvion = true;
     public bool switcha = true;
     public int gasolina;
+
+    private void Awake()
+    {
+        inputManager = new InputManager();
+
+        inputManager.Hola.MoverNave.performed += a => joyIzqdo = a.ReadValue<Vector2>();
+        inputManager.Hola.MoverNave.canceled += a => joyIzqdo = Vector2.zero;
+
+
+        inputManager.Hola.Pausa.started += a => inicio.SendMessage("Pausate");
+
+        inputManager.Hola.BotonConfirmacion.started += a => Boton();
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,28 +50,6 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetButtonDown("ModoAvion") && inicio.movilidad == true && GameManager.modoGasolina == true)
-        {
-            if (switcha)
-            {
-                rigibody.constraints = RigidbodyConstraints.None;
-                StopCoroutine("BajarGasolina");
-                if (gasolina >= 0)
-                {
-                    modoAvion = false;
-                    switcha = false;
-                }
-            }
-            else
-            {
-                rigibody.constraints = RigidbodyConstraints.FreezePositionY;
-                StartCoroutine("BajarGasolina");
-                modoAvion = true;
-                switcha = true;
-            }
-
-        }
-        
         if (gasolina == 0)
         {
             rigibody.constraints = RigidbodyConstraints.None;
@@ -73,7 +72,7 @@ public class Movimiento : MonoBehaviour
             }
 
             //Desplazamiento en X
-            float desplX = Input.GetAxis("Horizontal") * speed;
+            float desplX = joyIzqdo.x * speed;
 
             transform.Translate(Vector3.left * -desplX * Time.deltaTime);
 
@@ -90,7 +89,7 @@ public class Movimiento : MonoBehaviour
             //Desplazamiento en Y
             if (transform.position.y >= -1.308465)
             {
-                float desplY = Input.GetAxis("Vertical") * speed;
+                float desplY = joyIzqdo.y * speed;
 
                 transform.Translate(Vector3.up * desplY * Time.deltaTime);
 
@@ -113,7 +112,7 @@ public class Movimiento : MonoBehaviour
 
             
             //Desplazamiento en X
-            float desplX = Input.GetAxis("Horizontal") * speed;
+            float desplX = joyIzqdo.x * speed;
 
             transform.Translate(Vector3.left * -desplX * Time.deltaTime);
 
@@ -139,4 +138,43 @@ public class Movimiento : MonoBehaviour
         }
     }
 
+    void Boton()
+    {
+        if(inicio.movilidad == true && GameManager.modoGasolina == true)
+        {
+            if (switcha)
+            {
+                rigibody.constraints = RigidbodyConstraints.None;
+                StopCoroutine("BajarGasolina");
+                if (gasolina >= 0)
+                {
+                    modoAvion = false;
+                    switcha = false;
+                }
+            }
+            else
+            {
+                rigibody.constraints = RigidbodyConstraints.FreezePositionY;
+                StartCoroutine("BajarGasolina");
+                modoAvion = true;
+                switcha = true;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    private void OnEnable()
+    {
+        inputManager.Enable();
+    }
+    private void OnDisable()
+    {
+        inputManager.Disable();
+    }
 }
