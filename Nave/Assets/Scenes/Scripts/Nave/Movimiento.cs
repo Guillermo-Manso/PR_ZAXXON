@@ -146,11 +146,8 @@ public class Movimiento : MonoBehaviour
             {
                 rigibody.constraints = RigidbodyConstraints.None;
                 StopCoroutine("BajarGasolina");
-                if (gasolina >= 0)
-                {
-                    modoAvion = false;
-                    switcha = false;
-                }
+                modoAvion = false;
+                switcha = false;
             }
             else
             {

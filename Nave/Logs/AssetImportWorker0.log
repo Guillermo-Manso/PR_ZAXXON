@@ -15,11 +15,11 @@ D:/Unity/Repositorio/PR_ZAXXON/Nave/Nave
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55745
+59934
 Successfully changed project path to: D:/Unity/Repositorio/PR_ZAXXON/Nave/Nave
 D:/Unity/Repositorio/PR_ZAXXON/Nave/Nave
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 40.80 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 42.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
@@ -36,426 +36,50 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56936
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001486 seconds.
+Registered in 0.001529 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 42.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 50.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.462 seconds
+- Completed reload, in  1.602 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000942 seconds.
+Registered in 0.001199 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 45.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 54.15 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.858 seconds
+- Completed reload, in  0.971 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2757 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 125.9 MB.
-System memory in use after: 126.1 MB.
+Unloading 2760 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.3 MB.
+System memory in use after: 127.5 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3204.
-Total: 2.188400 ms (FindLiveObjects: 0.270600 ms CreateObjectMapping: 0.114600 ms MarkObjects: 1.747300 ms  DeleteObjects: 0.055200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scenes/Modelos/Pincho.fbx
-  artifactKey: Guid(9c1f87408ea458c4a9c7bc009eb653b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Modelos/Pincho.fbx using Guid(9c1f87408ea458c4a9c7bc009eb653b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515d84f1e8de778b914aebeab664e8ba') in 0.220246 seconds
-  Import took 0.225535 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001030 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.815 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2647 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 125.7 MB.
-System memory in use after: 126.0 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3288.
-Total: 3.019700 ms (FindLiveObjects: 0.291700 ms CreateObjectMapping: 0.147300 ms MarkObjects: 2.551500 ms  DeleteObjects: 0.027800 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3208.
+Total: 2.223300 ms (FindLiveObjects: 0.294900 ms CreateObjectMapping: 0.127800 ms MarkObjects: 1.741600 ms  DeleteObjects: 0.058200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 694.462971 seconds.
-  path: Assets/Scenes/Materiales/Pincho.mat
-  artifactKey: Guid(9e2794da4f77fe04da6cf8297b0950ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho.mat using Guid(9e2794da4f77fe04da6cf8297b0950ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2d8c6a1c88ba30d10582add31d0894a') in 0.174978 seconds
-  Import took 0.179428 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.519036 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_BaseColor.png
-  artifactKey: Guid(0c233f8ddb7e9c7479e0dc03afdb407b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_BaseColor.png using Guid(0c233f8ddb7e9c7479e0dc03afdb407b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e228fdb45cec2d7a0dde90c920ab63af') in 0.033863 seconds
-  Import took 0.038085 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Metalness.png
-  artifactKey: Guid(b36f2310a038e24449e5e63ac1e511a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Metalness.png using Guid(b36f2310a038e24449e5e63ac1e511a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31a3dae34c5588fb3b7ce25cb4522350') in 0.015637 seconds
-  Import took 0.019399 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Roughness.png
-  artifactKey: Guid(b3b50184ae1dc634cb56e616029ad7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Roughness.png using Guid(b3b50184ae1dc634cb56e616029ad7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02241aedb55a81c7689c4b79a28021fd') in 0.013983 seconds
-  Import took 0.017932 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Normal.png
-  artifactKey: Guid(e19b5fc65279e0c4fab87886f307f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Normal.png using Guid(e19b5fc65279e0c4fab87886f307f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dda118fd94d464feec5ba07fda640c20') in 0.011090 seconds
-  Import took 0.014942 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Height.png
-  artifactKey: Guid(9d82fbe5759e50b4c8ffa457c0306805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Height.png using Guid(9d82fbe5759e50b4c8ffa457c0306805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ab0fe8d029bedc80eb9090a5a2c90cc') in 0.010595 seconds
-  Import took 0.014388 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.094813 seconds.
-  path: Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Normal.png
-  artifactKey: Guid(e19b5fc65279e0c4fab87886f307f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho/Pincho_lambert1_Normal.png using Guid(e19b5fc65279e0c4fab87886f307f8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc1ecf90ef2614cb3d50a2b1d372ae79') in 0.018639 seconds
-  Import took 0.022673 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.459240 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoAbajo1.prefab
-  artifactKey: Guid(42a8d4b6a2375824d8a38b3548ad7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoAbajo1.prefab using Guid(42a8d4b6a2375824d8a38b3548ad7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '459cc6bedd26b15edbd6884054b4f474') in 0.019598 seconds
-  Import took 0.086894 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000331 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoArriba2.prefab
-  artifactKey: Guid(93e5ec1917fcc224d805767261a3d65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoArriba2.prefab using Guid(93e5ec1917fcc224d805767261a3d65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b09347a417ea00dfc5f8e58b221f567') in 0.014068 seconds
-  Import took 0.018506 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000187 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoDcha2.prefab
-  artifactKey: Guid(ccd5d81083898e84ea84503cfc2b8453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoDcha2.prefab using Guid(ccd5d81083898e84ea84503cfc2b8453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d4ddc50252200ddead403b9ea2b3a9') in 0.012811 seconds
-  Import took 0.016808 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000163 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoArriba1.prefab
-  artifactKey: Guid(3d759138196310c45b4fad2d01ade29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoArriba1.prefab using Guid(3d759138196310c45b4fad2d01ade29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd012629a08d13bc40ef64cd57b9d685') in 0.010802 seconds
-  Import took 0.014648 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoDcha1.prefab
-  artifactKey: Guid(1637d37ba56a9bc4e936ef99af0ff59f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoDcha1.prefab using Guid(1637d37ba56a9bc4e936ef99af0ff59f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4510bf81ca9a137490c5f0a8a7ce024f') in 0.008631 seconds
-  Import took 0.032444 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoAbajo2.prefab
-  artifactKey: Guid(46024e8d7ba99a54ebd4e8015afd17a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoAbajo2.prefab using Guid(46024e8d7ba99a54ebd4e8015afd17a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e4f4e4c6d9963c04e192333551e4df2') in 0.012174 seconds
-  Import took 0.015945 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoIzqda1.prefab
-  artifactKey: Guid(fba5b8f0afcc87a4eb1960d79795acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoIzqda1.prefab using Guid(fba5b8f0afcc87a4eb1960d79795acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5fbd54f15baeae1cfc6b42f1675ef82') in 0.010241 seconds
-  Import took 0.027626 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoIzqda2.prefab
-  artifactKey: Guid(c9b3e8410fed67d449947df5e5a05f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoIzqda2.prefab using Guid(c9b3e8410fed67d449947df5e5a05f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '054c53e6b90b975114c71ae5247a30b0') in 0.011803 seconds
-  Import took 0.015562 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.757762 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoAbajo1.prefab
-  artifactKey: Guid(42a8d4b6a2375824d8a38b3548ad7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoAbajo1.prefab using Guid(42a8d4b6a2375824d8a38b3548ad7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef4cf54bcba4396461fb81f2cc6372e7') in 0.010711 seconds
-  Import took 0.067805 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 65.541191 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoAbajo2.prefab
-  artifactKey: Guid(46024e8d7ba99a54ebd4e8015afd17a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoAbajo2.prefab using Guid(46024e8d7ba99a54ebd4e8015afd17a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f890b5aed540748fafa1bb25b49cde03') in 0.011910 seconds
-  Import took 0.016238 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.857489 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoArriba1.prefab
-  artifactKey: Guid(3d759138196310c45b4fad2d01ade29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoArriba1.prefab using Guid(3d759138196310c45b4fad2d01ade29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5806a4ae3b64f3a4176eefb6351e260') in 0.010500 seconds
-  Import took 0.015402 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.664025 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoArriba2.prefab
-  artifactKey: Guid(93e5ec1917fcc224d805767261a3d65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoArriba2.prefab using Guid(93e5ec1917fcc224d805767261a3d65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba0daf72b67133b9248ee2ee73f87a84') in 0.013107 seconds
-  Import took 0.017702 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.766223 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoDcha1.prefab
-  artifactKey: Guid(1637d37ba56a9bc4e936ef99af0ff59f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoDcha1.prefab using Guid(1637d37ba56a9bc4e936ef99af0ff59f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d918756492688e79b08d8e9604a141c') in 0.012737 seconds
-  Import took 0.017343 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.707668 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoDcha2.prefab
-  artifactKey: Guid(ccd5d81083898e84ea84503cfc2b8453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoDcha2.prefab using Guid(ccd5d81083898e84ea84503cfc2b8453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b7de8f4c46aa7212ac10114b9573f3d') in 0.011145 seconds
-  Import took 0.015216 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.265553 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoIzqda1.prefab
-  artifactKey: Guid(fba5b8f0afcc87a4eb1960d79795acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoIzqda1.prefab using Guid(fba5b8f0afcc87a4eb1960d79795acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd7a509a99188055fd3a989a5679509') in 0.010908 seconds
-  Import took 0.066176 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.355894 seconds.
-  path: Assets/Scenes/Materiales/Pincho.mat
-  artifactKey: Guid(9e2794da4f77fe04da6cf8297b0950ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Pincho.mat using Guid(9e2794da4f77fe04da6cf8297b0950ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '472095b7d23252cb2e5d59d088fc430c') in 0.029575 seconds
-  Import took 0.063770 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001222 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.924 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2647 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 126.1 MB.
-System memory in use after: 126.3 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3330.
-Total: 2.281300 ms (FindLiveObjects: 0.296500 ms CreateObjectMapping: 0.110200 ms MarkObjects: 1.860700 ms  DeleteObjects: 0.013100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1079.202830 seconds.
-  path: Assets/Scenes/Modelos/Ventilador2.fbx
-  artifactKey: Guid(ce028c74200079e439bf8bdb1e43b998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Modelos/Ventilador2.fbx using Guid(ce028c74200079e439bf8bdb1e43b998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d8865c1e690de216907232c4211ec1a') in 0.173357 seconds
-  Import took 0.206826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.573181 seconds.
-  path: Assets/Scenes/Scripts/Obstaculos/PinchoIzqda2.prefab
-  artifactKey: Guid(c9b3e8410fed67d449947df5e5a05f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scripts/Obstaculos/PinchoIzqda2.prefab using Guid(c9b3e8410fed67d449947df5e5a05f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c6667695b33c7943fa54681d2b245e3') in 0.026047 seconds
-  Import took 0.030497 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 53.836677 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_BaseColor.png
-  artifactKey: Guid(c0d054adad7b6e449a2996a99b36bb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_BaseColor.png using Guid(c0d054adad7b6e449a2996a99b36bb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9823928dfbf92c83c7b6e62592dbf603') in 0.017126 seconds
-  Import took 0.021729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Height.png
-  artifactKey: Guid(e87496ee4ff048e4a9d57b5d4c6beddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Height.png using Guid(e87496ee4ff048e4a9d57b5d4c6beddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f176a5600dbe675ccbe1ead2f7b74319') in 0.012108 seconds
-  Import took 0.016064 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Metalness.png
-  artifactKey: Guid(82ce86c0700b5514fb4f7f9ae55b8e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Metalness.png using Guid(82ce86c0700b5514fb4f7f9ae55b8e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '469ab1b4ed8dba52a9bfea7652b03fa6') in 0.015792 seconds
-  Import took 0.045507 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Normal.png
-  artifactKey: Guid(3aec99aee50210b4a9b73439af3ac796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Normal.png using Guid(3aec99aee50210b4a9b73439af3ac796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36086a2db64eb62babee44ac4799eb6e') in 0.012510 seconds
-  Import took 0.016096 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Roughness.png
-  artifactKey: Guid(1659c3c4fd5b21343b04cc1ef8f167d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Roughness.png using Guid(1659c3c4fd5b21343b04cc1ef8f167d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c3d6750859b8e98a0a9cdcfd50df33a') in 0.011416 seconds
-  Import took 0.015350 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.988184 seconds.
-  path: Assets/Scenes/Materiales/Ventilador
-  artifactKey: Guid(a3879f473308b884298fce487d4ccabd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador using Guid(a3879f473308b884298fce487d4ccabd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23d6a067c707cbe0b312e6b38ede651e') in 0.005476 seconds
-  Import took 0.009388 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.238926 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador.mat
-  artifactKey: Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador.mat using Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b34eb7317c21c3d630a5d494390513b') in 0.011809 seconds
-  Import took 0.015899 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.019625 seconds.
-  path: Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Normal.png
-  artifactKey: Guid(3aec99aee50210b4a9b73439af3ac796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador/Ventilador2_lambert3_Normal.png using Guid(3aec99aee50210b4a9b73439af3ac796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8122cb6b43374cdff8efc9f5251102ab') in 0.013945 seconds
-  Import took 0.077874 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 169.226047 seconds.
-  path: Assets/Scenes/Materiales/Ventilador.mat
-  artifactKey: Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador.mat using Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '786c4ab920cbd9aca25a3fdb47f426ea') in 0.019312 seconds
-  Import took 0.024592 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000981 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.879 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2647 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 126.3 MB.
-System memory in use after: 126.6 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3370.
-Total: 2.452800 ms (FindLiveObjects: 0.242700 ms CreateObjectMapping: 0.103000 ms MarkObjects: 2.078900 ms  DeleteObjects: 0.027400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 52.459352 seconds.
-  path: Assets/Scenes/Materiales/Ventilador.mat
-  artifactKey: Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Materiales/Ventilador.mat using Guid(bbc9832e9d014de43844da5e13bb5b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d75edb89d4486a479a1d7b3195fbd0') in 0.157068 seconds
-  Import took 0.188614 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001316 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.875 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2647 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 126.5 MB.
-System memory in use after: 126.7 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3409.
-Total: 2.437200 ms (FindLiveObjects: 0.278100 ms CreateObjectMapping: 0.111700 ms MarkObjects: 2.034000 ms  DeleteObjects: 0.012800 ms)
+  path: Assets/Scenes/New Shader Graph.shadergraph
+  artifactKey: Guid(dc0d5176a7332ed469b384ac93f44af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Shader Graph.shadergraph using Guid(dc0d5176a7332ed469b384ac93f44af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1706cbd9edf94677f7dd25ea19ccbcb4') in 0.033159 seconds
+  Import took 0.037421 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
