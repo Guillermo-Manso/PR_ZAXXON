@@ -9,10 +9,13 @@ public class ShaderAnimation : MonoBehaviour
 
     [SerializeField] Material material;
     float velTex;
+    float velInicial;
     // Start is called before the first frame update
     void Start()
     {
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
+        velInicial = inicio.velGeneral * 0.005f;
+        material.SetFloat("Vector1_c22637d292894e99a835c1f7b4072b13", velInicial);
     }
 
     // Update is called once per frame

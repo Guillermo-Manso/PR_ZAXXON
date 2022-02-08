@@ -66,6 +66,8 @@ public class Movimiento : MonoBehaviour
             rigibody.constraints = RigidbodyConstraints.None;
 
             modoAvion = false;
+            switcha = false;
+            cayendo = true;
             if (transform.position.y < -2.88f)
             {
                 rigibody.constraints = RigidbodyConstraints.FreezePositionY;
@@ -137,7 +139,7 @@ public class Movimiento : MonoBehaviour
             }
         }
 
-
+        print(switcha);
     }
 
     IEnumerator BajarGasolina()

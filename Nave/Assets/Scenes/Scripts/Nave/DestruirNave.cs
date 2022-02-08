@@ -79,7 +79,6 @@ public class DestruirNave : MonoBehaviour
         if (other.gameObject.CompareTag("Gasolina"))
         {
             StartCoroutine("SubirGasolina");
-            movimiento.switcha = false;
             Destroy(other.gameObject);
         }
 
