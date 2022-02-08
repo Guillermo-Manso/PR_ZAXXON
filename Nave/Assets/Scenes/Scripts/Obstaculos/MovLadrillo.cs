@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MovLadrillo : MonoBehaviour
 {
+    MeshRenderer meshRenderer;
+
+
     public GameObject NaveTanque;
     private DestruirNave destruirNave;
     private Movimiento movimiento;
@@ -14,13 +17,17 @@ public class MovLadrillo : MonoBehaviour
     private Inicio inicio;
 
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip Powerup;
+
     float velocidad;
     // Start is called before the first frame update
     void Start()
     {
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
+        audioSource = GetComponent<AudioSource>();
 
-
+        meshRenderer = GetComponent<MeshRenderer>();
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
 
         inicio = GameObject.Find("Iniciar").GetComponent<Inicio>();
@@ -80,6 +87,12 @@ public class MovLadrillo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Nave"))
         {
+            /*if (gameObject.CompareTag("PowerUp") || gameObject.CompareTag("Gasolina"))
+            {
+                //audioSource.Play();
+                audioSource.PlayOneShot(Powerup, 1);
+                meshRenderer.enabled = false;
+            }*/
             Destroy(gameObject);    
         }
     }

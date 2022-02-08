@@ -24,6 +24,11 @@ public class Movimiento : MonoBehaviour
     public int gasolina;
     public bool cayendo = false;
 
+
+    public AudioSource audioSource;
+    [SerializeField] AudioClip Powerup;
+    public AudioClip Golpe;
+
     private void Awake()
     {
         inputManager = new InputManager();
@@ -47,6 +52,8 @@ public class Movimiento : MonoBehaviour
         rigibody = GetComponent<Rigidbody>();
         gasolina = 400;
         StartCoroutine("BajarGasolina");
+        audioSource = GetComponent<AudioSource>();
+
     }
     // Update is called once per frame
     public void Update()
@@ -163,7 +170,13 @@ public class Movimiento : MonoBehaviour
     }
 
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PowerUp") || other.gameObject.CompareTag("Gasolina"))
+        {
+            audioSource.PlayOneShot(Powerup, 1);
+        }
+    }
 
 
 
