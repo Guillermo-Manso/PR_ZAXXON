@@ -31,7 +31,7 @@ public class DestruirNave : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Obstaculo") ||other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
         {
-            movimiento.audioSource.PlayOneShot(movimiento.Golpe, 1);
+            movimiento.Crash.Play();
             if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Ventilador"))
             {
                 daño = 50;

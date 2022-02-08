@@ -18,7 +18,6 @@ public class ShaderAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(inicio.velGeneral);
         velTex = inicio.velGeneral * 0.005f;
         //velTex = 0.15f;
         //velTex += 0.0005f;

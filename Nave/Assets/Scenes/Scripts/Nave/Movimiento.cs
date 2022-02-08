@@ -28,6 +28,9 @@ public class Movimiento : MonoBehaviour
     public AudioSource audioSource;
     [SerializeField] AudioClip Powerup;
     public AudioClip Golpe;
+    public AudioSource PowerUp;
+    public AudioSource Crash;
+
 
     private void Awake()
     {
@@ -169,15 +172,15 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-
+    //Sonidos--------------------------------------------------------------------------------------------------------
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PowerUp") || other.gameObject.CompareTag("Gasolina"))
         {
-            audioSource.PlayOneShot(Powerup, 1);
+            PowerUp.Play();
         }
     }
-
+    //---------------------------------------------------------------------------------------------------------------
 
 
 
