@@ -18,10 +18,11 @@ public class Movimiento : MonoBehaviour
     Vector2 joyIzqdo;
 
 
-    [SerializeField] float speed = 10;
+    [SerializeField] float speed = 15;
     public bool modoAvion = true;
     public bool switcha = true;
     public int gasolina;
+    public bool cayendo = false;
 
     private void Awake()
     {
@@ -66,7 +67,7 @@ public class Movimiento : MonoBehaviour
         if (modoAvion == true)
         {
             //Ascenso desde el suelo
-            if (transform.position.y < -1.308465)
+            if (transform.position.y < -1)
             {
                 transform.Translate(Vector3.up * 10 * Time.deltaTime);
             }
@@ -87,15 +88,15 @@ public class Movimiento : MonoBehaviour
 
 
             //Desplazamiento en Y
-            if (transform.position.y >= -1.308465)
+            if (transform.position.y >= -1)
             {
                 float desplY = joyIzqdo.y * speed;
 
                 transform.Translate(Vector3.up * desplY * Time.deltaTime);
 
-                if (transform.position.y <= -1.308465)
+                if (transform.position.y <= -1)
                 {
-                    transform.position = new Vector3(transform.position.x, -1.308465f, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, -1, transform.position.z);
                 }
 
                 if (transform.position.y >= 21.26085f)
@@ -140,7 +141,7 @@ public class Movimiento : MonoBehaviour
 
     void Boton()
     {
-        if(inicio.movilidad == true && GameManager.modoGasolina == true)
+        if(inicio.movilidad == true && GameManager.modoGasolina == true && gasolina > 0)
         {
             if (switcha)
             {
@@ -148,6 +149,7 @@ public class Movimiento : MonoBehaviour
                 StopCoroutine("BajarGasolina");
                 modoAvion = false;
                 switcha = false;
+                cayendo = true;
             }
             else
             {
@@ -155,6 +157,7 @@ public class Movimiento : MonoBehaviour
                 StartCoroutine("BajarGasolina");
                 modoAvion = true;
                 switcha = true;
+                cayendo = false;
             }
         }
     }

@@ -158,21 +158,21 @@ public class Inicio : MonoBehaviour
         {
             if (nivel < 4)
             {
-                yield return new WaitForSeconds(1f);
-                velGeneral = velGeneral + 0.4f;
+                yield return new WaitForSeconds(0.00001f);
+                velGeneral = velGeneral + 0.12f * Time.deltaTime;
                 if (GameManager.dificultad == 4)
                 {
-                    velGeneral = velGeneral + 0.4f;
+                    velGeneral = velGeneral + 0.12f;
                 }
             }
 
             else
             {
-                yield return new WaitForSeconds(1f);
-                velGeneral = velGeneral + 0.1f;
+                yield return new WaitForSeconds(0.0001f);
+                velGeneral = velGeneral + 0.04f * Time.deltaTime;
                 if (GameManager.dificultad == 4)
                 {
-                    velGeneral = velGeneral + 0.1f;
+                    velGeneral = velGeneral + 0.04f;
                 }
             }
         }

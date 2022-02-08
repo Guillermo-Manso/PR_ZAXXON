@@ -950,7 +950,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"f40b19db29529fb48b8b88f7935be99c\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"600d6832b1b372e43a42f07d78a69c1f\",\"type\":3}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -1332,7 +1332,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": 0.23999999463558198,
-    "m_FloatType": 0,
+    "m_FloatType": 3,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -1438,7 +1438,7 @@
         "y": 0.0
     },
     "m_Labels": [],
-    "m_Channel": 0
+    "m_Channel": 1
 }
 
 {

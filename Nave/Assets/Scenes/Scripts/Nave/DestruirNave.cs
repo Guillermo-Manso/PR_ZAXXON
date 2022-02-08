@@ -86,6 +86,7 @@ public class DestruirNave : MonoBehaviour
         {
             rigibody.constraints = RigidbodyConstraints.FreezePositionY;
             movimiento.transform.position = new Vector3(transform.position.x, -2.88f, 0);
+            movimiento.cayendo = false;
         }
 
     }

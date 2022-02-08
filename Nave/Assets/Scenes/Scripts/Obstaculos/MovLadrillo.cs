@@ -8,7 +8,7 @@ public class MovLadrillo : MonoBehaviour
 {
     public GameObject NaveTanque;
     private DestruirNave destruirNave;
-
+    private Movimiento movimiento;
 
     public GameObject Iniciar;
     private Inicio inicio;
@@ -18,8 +18,8 @@ public class MovLadrillo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
 
-        
 
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
 
@@ -31,18 +31,41 @@ public class MovLadrillo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        velocidad = inicio.velGeneral;
-        transform.Translate(Vector3.back * Time.deltaTime * velocidad);
-
-        float posZ = transform.position.z;
-        if(posZ <= -25)
+        if(movimiento.cayendo == false)
         {
-            Destroy(gameObject);
+            velocidad = inicio.velGeneral;
+            transform.Translate(Vector3.back * Time.deltaTime * velocidad);
+
+            float posZ = transform.position.z;
+            if (posZ <= -25)
+            {
+                Destroy(gameObject);
+            }
+
+            if (destruirNave.alive == false)
+            {
+                StartCoroutine("DestruirTodo");
+            }
         }
+    }
 
-        if(destruirNave.alive == false)
+    private void FixedUpdate()
+    {
+        if (movimiento.cayendo == true)
         {
-            StartCoroutine("DestruirTodo");
+            velocidad = inicio.velGeneral;
+            transform.Translate(Vector3.back * Time.deltaTime * velocidad);
+
+            float posZ = transform.position.z;
+            if (posZ <= -25)
+            {
+                Destroy(gameObject);
+            }
+
+            if (destruirNave.alive == false)
+            {
+                StartCoroutine("DestruirTodo");
+            }
         }
     }
 
