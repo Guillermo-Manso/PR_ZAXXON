@@ -139,7 +139,6 @@ public class Movimiento : MonoBehaviour
             }
         }
 
-        print(switcha);
     }
 
     IEnumerator BajarGasolina()
