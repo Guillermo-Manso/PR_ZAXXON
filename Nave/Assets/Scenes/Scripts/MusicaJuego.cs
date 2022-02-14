@@ -15,34 +15,37 @@ public class MusicaJuego : MonoBehaviour
     void Start()
     {
         Musica = GetComponent<AudioSource>();
-        aleatorizador = Random.Range(1, 4);
         StartCoroutine("ReproducirMusica");
     }
 
     IEnumerator ReproducirMusica()
     {
-        switch (aleatorizador)
+        while (true)
         {
-            case 1:
-                Musica.clip = Musica1;
-                Musica.Play();
-                finClip = Musica.clip.length;
-                break;
-            case 2:
-                Musica.clip = Musica2;
-                Musica.Play();
-                finClip = Musica.clip.length;
-                break;
-            case 3:
-                Musica.clip = Musica3;
-                Musica.Play();
-                finClip = Musica.clip.length;
-                break;
-            default:
-                break;
+            aleatorizador = Random.Range(1, 4);
+            switch (aleatorizador)
+            {
+                case 1:
+                    Musica.clip = Musica1;
+                    Musica.Play();
+                    finClip = Musica.clip.length;
+                    break;
+                case 2:
+                    Musica.clip = Musica2;
+                    Musica.Play();
+                    finClip = Musica.clip.length;
+                    break;
+                case 3:
+                    Musica.clip = Musica3;
+                    Musica.Play();
+                    finClip = Musica.clip.length;
+                    break;
+                default:
+                    break;
+            }
+            print(aleatorizador);
+            yield return new WaitForSeconds(finClip);
         }
-        print(aleatorizador);
-        yield return new WaitForSeconds(finClip);
     }
 
     // Update is called once per frame
