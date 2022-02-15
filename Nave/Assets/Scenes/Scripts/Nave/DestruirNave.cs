@@ -8,6 +8,8 @@ public class DestruirNave : MonoBehaviour
     private Rigidbody rigibody;
     private Movimiento movimiento;
 
+    public GameObject particulas;
+
     public GameObject Iniciar;
     private Inicio inicio;
     public bool alive = true;
@@ -65,7 +67,9 @@ public class DestruirNave : MonoBehaviour
             {
                 inicio.velGeneral = 0;
                 alive = false;
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                particulas.SetActive(true);
+                //Destroy(gameObject);
             }
             Destroy(other.gameObject);
 
@@ -120,7 +124,8 @@ public class DestruirNave : MonoBehaviour
         {
             inicio.velGeneral = 0;
             alive = false;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            particulas.SetActive(true);
         }
     }
 }
