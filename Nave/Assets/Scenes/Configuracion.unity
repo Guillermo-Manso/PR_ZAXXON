@@ -1442,9 +1442,9 @@ MonoBehaviour:
   m_FillRect: {fileID: 990586487}
   m_HandleRect: {fileID: 504580936}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
+  m_MinValue: -40
+  m_MaxValue: 20
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2054,6 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b36899e696df7844b6c39af54521710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 75edc08511a8ed34c88b18059dccfb73, type: 2}
   volSlider: {fileID: 1060183999}
   diffSlider: {fileID: 117659996}
   tipoDeDificultad: {fileID: 952795004}

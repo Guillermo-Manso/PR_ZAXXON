@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Inicio : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Inicio : MonoBehaviour
     [SerializeField] Slider vidaSlider;
     [SerializeField] Slider gasSlider;
     [SerializeField] Slider ShieldSlider;
+
+
+    public AudioMixer audioMixer;
+    public Slider volumenSlider;
 
     GameObject GameOver;
     Canvas MenuGameOver;
@@ -70,6 +75,9 @@ public class Inicio : MonoBehaviour
             Time.timeScale = 1 - Time.timeScale;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
         }
+
+
+        volumenSlider.value = GameManager.volMusica;
 
         destruirNave = GameObject.Find("NaveTanque").GetComponent<DestruirNave>();
         movimiento = GameObject.Find("Nave").GetComponent<Movimiento>();
@@ -238,7 +246,10 @@ public class Inicio : MonoBehaviour
             }
         }
     }
-    
+    public void SetSound(string tipoVolumen, float nivelVol)
+    {
+        audioMixer.SetFloat(tipoVolumen, nivelVol);
+    }
 
     // Update is called once per frame
     void Update()
@@ -246,6 +257,10 @@ public class Inicio : MonoBehaviour
         vidaSlider.value = destruirNave.vidas;
         gasSlider.value = movimiento.gasolina;
         ShieldSlider.value = destruirNave.cargas;
+        volumenSlider.onValueChanged.AddListener(delegate { SetSound("Master", volumenSlider.value); });
+
+        GameManager.volMusica = volumenSlider.value;
+
 
         puntuacion2.text = Mathf.Round(puntos).ToString() + " ptos";
         puntuacion2.color = Color.white;

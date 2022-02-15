@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Configuracion : MonoBehaviour
 {
+    public AudioMixer audioMixer;
+
     [SerializeField] Slider volSlider;
     [SerializeField] Slider diffSlider;
     public Text tipoDeDificultad;
@@ -27,6 +30,7 @@ public class Configuracion : MonoBehaviour
     {
         volSlider.value = GameManager.volMusica;
         diffSlider.value = GameManager.dificultad;
+
     }
 
     public void CambiarVolumen()
@@ -43,10 +47,15 @@ public class Configuracion : MonoBehaviour
     {
         GameManager.modoGasolina = false;
     }
-
+    public void SetSound(string tipoVolumen, float nivelVol)
+    {
+        audioMixer.SetFloat(tipoVolumen, nivelVol);
+    }
     public void Update()
     {
         GameManager.dificultad = diffSlider.value;
+        volSlider.onValueChanged.AddListener(delegate { SetSound("Master", volSlider.value); });
+
 
         if (GameManager.dificultad == 4)
         {

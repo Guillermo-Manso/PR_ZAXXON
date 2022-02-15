@@ -30,6 +30,7 @@ public class Movimiento : MonoBehaviour
     public AudioClip Golpe;
     public AudioSource PowerUp;
     public AudioSource Crash;
+    public AudioSource motor;
 
 
     private void Awake()
@@ -139,6 +140,15 @@ public class Movimiento : MonoBehaviour
             }
         }
 
+
+        if (inicio.modoPausa == true)
+        {
+            motor.Stop();
+        }
+        else
+        {
+            motor.Play();
+        }
     }
 
     IEnumerator BajarGasolina()

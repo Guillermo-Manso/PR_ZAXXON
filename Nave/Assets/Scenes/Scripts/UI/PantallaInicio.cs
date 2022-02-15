@@ -14,6 +14,7 @@ public class PantallaInicio : MonoBehaviour
     public void Jugar()
     {
         SceneManager.LoadScene(1);
+        GameManager.musicaInicial = false;
     }
 
     public void Highscores()
