@@ -176,7 +176,7 @@ public class Inicio : MonoBehaviour
 
             else
             {
-                yield return new WaitForSeconds(0.0001f);
+                yield return new WaitForSeconds(0.00001f);
                 velGeneral = velGeneral + 0.04f * Time.deltaTime;
                 if (GameManager.dificultad == 4)
                 {
