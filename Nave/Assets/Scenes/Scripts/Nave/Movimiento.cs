@@ -31,6 +31,7 @@ public class Movimiento : MonoBehaviour
     public AudioSource PowerUp;
     public AudioSource Crash;
     public AudioSource motor;
+    public AudioSource explosion;
 
 
     private void Awake()
@@ -141,7 +142,7 @@ public class Movimiento : MonoBehaviour
         }
 
 
-        if (inicio.modoPausa == true)
+        if (inicio.modoPausa == true || destruirNave.alive == false)
         {
             motor.Stop();
         }

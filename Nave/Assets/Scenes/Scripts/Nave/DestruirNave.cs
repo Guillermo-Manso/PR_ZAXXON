@@ -31,9 +31,8 @@ public class DestruirNave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Obstaculo") ||other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
+        if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Obstaculo") || other.gameObject.CompareTag("Ventilador") || other.gameObject.CompareTag("PinchoAbajo") || other.gameObject.CompareTag("PinchoArriba") || other.gameObject.CompareTag("PinchoIzqda") || other.gameObject.CompareTag("PinchoDcha"))
         {
-            movimiento.Crash.Play();
             if (other.gameObject.CompareTag("Enemigo") || other.gameObject.CompareTag("Ventilador"))
             {
                 daño = 50;
@@ -60,6 +59,10 @@ public class DestruirNave : MonoBehaviour
                 {
                     vidas = vidas - sobrante;
                     cargas = 0;
+                    if(vidas > 0)
+                    {
+                        movimiento.Crash.Play();
+                    }
                 }
             }
 
@@ -69,10 +72,8 @@ public class DestruirNave : MonoBehaviour
                 alive = false;
                 gameObject.SetActive(false);
                 particulas.SetActive(true);
-                //Destroy(gameObject);
             }
             Destroy(other.gameObject);
-
         }
 
         if (other.gameObject.CompareTag("PowerUp") && cargas <= 100)

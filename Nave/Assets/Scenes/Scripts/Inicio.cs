@@ -170,7 +170,7 @@ public class Inicio : MonoBehaviour
                 velGeneral = velGeneral + 0.12f * Time.deltaTime;
                 if (GameManager.dificultad == 4)
                 {
-                    velGeneral = velGeneral + 0.12f;
+                    velGeneral = velGeneral + 0.12f * Time.deltaTime;
                 }
             }
 
@@ -180,7 +180,7 @@ public class Inicio : MonoBehaviour
                 velGeneral = velGeneral + 0.04f * Time.deltaTime;
                 if (GameManager.dificultad == 4)
                 {
-                    velGeneral = velGeneral + 0.04f;
+                    velGeneral = velGeneral + 0.04f * Time.deltaTime;
                 }
             }
         }
