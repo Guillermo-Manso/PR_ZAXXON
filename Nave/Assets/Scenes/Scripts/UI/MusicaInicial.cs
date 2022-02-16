@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MusicaInicial : MonoBehaviour
 {
+    public AudioSource musicaInicial;
     // Start is called before the first frame update
     void Start()
     {
         if(GameManager.musicaInicial == false)
         {
+            musicaInicial.Play();
             DontDestroyOnLoad(gameObject);
             GameManager.musicaInicial = true;
         }
