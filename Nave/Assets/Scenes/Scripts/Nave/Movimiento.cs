@@ -41,7 +41,6 @@ public class Movimiento : MonoBehaviour
         inputManager.Hola.MoverNave.performed += a => joyIzqdo = a.ReadValue<Vector2>();
         inputManager.Hola.MoverNave.canceled += a => joyIzqdo = Vector2.zero;
 
-
         inputManager.Hola.Pausa.started += a => inicio.SendMessage("Pausate");
 
         inputManager.Hola.BotonConfirmacion.started += a => Boton();
@@ -145,10 +144,6 @@ public class Movimiento : MonoBehaviour
         if (inicio.modoPausa == true || destruirNave.alive == false)
         {
             motor.Stop();
-        }
-        else
-        {
-            motor.Play();
         }
     }
 

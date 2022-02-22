@@ -41,6 +41,22 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""R1"",
+                    ""type"": ""Button"",
+                    ""id"": ""35b0e5a4-908a-44d2-9d74-be89d53cd1f1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""L1"",
+                    ""type"": ""Button"",
+                    ""id"": ""331d8fe8-ace9-4320-977d-cedaf8edd656"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -87,6 +103,28 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""action"": ""Pausa"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3dc887b0-20a7-4185-90e6-69929e384b20"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79f03d3f-7856-4067-9a8e-328f0f7cdc05"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""L1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -98,6 +136,8 @@ public class @InputManager : IInputActionCollection, IDisposable
         m_Hola_MoverNave = m_Hola.FindAction("MoverNave", throwIfNotFound: true);
         m_Hola_BotonConfirmacion = m_Hola.FindAction("BotonConfirmacion", throwIfNotFound: true);
         m_Hola_Pausa = m_Hola.FindAction("Pausa", throwIfNotFound: true);
+        m_Hola_R1 = m_Hola.FindAction("R1", throwIfNotFound: true);
+        m_Hola_L1 = m_Hola.FindAction("L1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -150,6 +190,8 @@ public class @InputManager : IInputActionCollection, IDisposable
     private readonly InputAction m_Hola_MoverNave;
     private readonly InputAction m_Hola_BotonConfirmacion;
     private readonly InputAction m_Hola_Pausa;
+    private readonly InputAction m_Hola_R1;
+    private readonly InputAction m_Hola_L1;
     public struct HolaActions
     {
         private @InputManager m_Wrapper;
@@ -157,6 +199,8 @@ public class @InputManager : IInputActionCollection, IDisposable
         public InputAction @MoverNave => m_Wrapper.m_Hola_MoverNave;
         public InputAction @BotonConfirmacion => m_Wrapper.m_Hola_BotonConfirmacion;
         public InputAction @Pausa => m_Wrapper.m_Hola_Pausa;
+        public InputAction @R1 => m_Wrapper.m_Hola_R1;
+        public InputAction @L1 => m_Wrapper.m_Hola_L1;
         public InputActionMap Get() { return m_Wrapper.m_Hola; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -175,6 +219,12 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Pausa.started -= m_Wrapper.m_HolaActionsCallbackInterface.OnPausa;
                 @Pausa.performed -= m_Wrapper.m_HolaActionsCallbackInterface.OnPausa;
                 @Pausa.canceled -= m_Wrapper.m_HolaActionsCallbackInterface.OnPausa;
+                @R1.started -= m_Wrapper.m_HolaActionsCallbackInterface.OnR1;
+                @R1.performed -= m_Wrapper.m_HolaActionsCallbackInterface.OnR1;
+                @R1.canceled -= m_Wrapper.m_HolaActionsCallbackInterface.OnR1;
+                @L1.started -= m_Wrapper.m_HolaActionsCallbackInterface.OnL1;
+                @L1.performed -= m_Wrapper.m_HolaActionsCallbackInterface.OnL1;
+                @L1.canceled -= m_Wrapper.m_HolaActionsCallbackInterface.OnL1;
             }
             m_Wrapper.m_HolaActionsCallbackInterface = instance;
             if (instance != null)
@@ -188,6 +238,12 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Pausa.started += instance.OnPausa;
                 @Pausa.performed += instance.OnPausa;
                 @Pausa.canceled += instance.OnPausa;
+                @R1.started += instance.OnR1;
+                @R1.performed += instance.OnR1;
+                @R1.canceled += instance.OnR1;
+                @L1.started += instance.OnL1;
+                @L1.performed += instance.OnL1;
+                @L1.canceled += instance.OnL1;
             }
         }
     }
@@ -197,5 +253,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         void OnMoverNave(InputAction.CallbackContext context);
         void OnBotonConfirmacion(InputAction.CallbackContext context);
         void OnPausa(InputAction.CallbackContext context);
+        void OnR1(InputAction.CallbackContext context);
+        void OnL1(InputAction.CallbackContext context);
     }
 }

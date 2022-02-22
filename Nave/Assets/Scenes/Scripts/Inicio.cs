@@ -202,6 +202,7 @@ public class Inicio : MonoBehaviour
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
         BotonDesactivado.Select();
         StartCoroutine("moverse");
+        movimiento.motor.Play();
     }
 
     IEnumerator moverse()

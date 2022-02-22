@@ -6463,6 +6463,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868955537}
   m_CullTransparentMesh: 1
+--- !u!82 &1897597189 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2738602744439457501, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
+  m_PrefabInstance: {fileID: 2738602743932814403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1909727314
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,9 +7157,25 @@ PrefabInstance:
       value: Nave
       objectReference: {fileID: 0}
     - target: {fileID: 2738602744439457501, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738602744439457501, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738602744439457501, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3ae7bed7bad84ec40ab94e03c8094bf8, type: 3}
+      objectReference: {fileID: 8300000, guid: 78ecc02f09ae39b4daa22def93d15316, type: 3}
+    - target: {fileID: 2738602744439457501, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738602744439457502, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
+      propertyPath: motor
+      value: 
+      objectReference: {fileID: 1897597189}
     - target: {fileID: 2738602744439457502, guid: 0bcad82845c029a41af2ec58cb2498c6, type: 3}
       propertyPath: explosion
       value: 

@@ -55,14 +55,11 @@ public class DestruirNave : MonoBehaviour
             }
             if (vidas > 0)
             {
+                movimiento.Crash.Play();
                 if (cargas <= 0)
                 {
                     vidas = vidas - sobrante;
                     cargas = 0;
-                    if(vidas > 0)
-                    {
-                        movimiento.Crash.Play();
-                    }
                 }
             }
 
