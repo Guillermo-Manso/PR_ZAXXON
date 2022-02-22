@@ -2056,6 +2056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 75edc08511a8ed34c88b18059dccfb73, type: 2}
+  boton: {fileID: 1751889068}
   volSlider: {fileID: 1060183999}
   diffSlider: {fileID: 117659996}
   tipoDeDificultad: {fileID: 952795004}

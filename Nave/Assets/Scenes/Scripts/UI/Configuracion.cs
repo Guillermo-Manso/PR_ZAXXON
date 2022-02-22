@@ -8,6 +8,8 @@ public class Configuracion : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
+    public GameObject boton;
+
     [SerializeField] Slider volSlider;
     [SerializeField] Slider diffSlider;
     public Text tipoDeDificultad;
@@ -41,11 +43,13 @@ public class Configuracion : MonoBehaviour
     public void ActivarGasolina()
     {
         GameManager.modoGasolina = true;
+        boton.SendMessage("SonidoBoton");
     }
 
     public void DesctivarGasolina()
     {
         GameManager.modoGasolina = false;
+        boton.SendMessage("SonidoBoton");
     }
     public void SetSound(string tipoVolumen, float nivelVol)
     {

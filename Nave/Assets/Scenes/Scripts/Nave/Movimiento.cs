@@ -18,7 +18,7 @@ public class Movimiento : MonoBehaviour
     Vector2 joyIzqdo;
 
 
-    [SerializeField] float speed = 15;
+    [SerializeField] float speed = 20;
     public bool modoAvion = true;
     public bool switcha = true;
     public int gasolina;
@@ -77,7 +77,7 @@ public class Movimiento : MonoBehaviour
         }
          
         //print(gasolina);
-        if (modoAvion == true)
+        if (modoAvion == true && inicio.modoPausa == false)
         {
             //Ascenso desde el suelo
             if (transform.position.y < -1)
@@ -121,7 +121,7 @@ public class Movimiento : MonoBehaviour
         }
 
 
-        else
+        else if(modoAvion == false && inicio.modoPausa == false)
         {
 
             
